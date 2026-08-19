@@ -1,0 +1,32 @@
+#container{
+	display: flex;
+	background: #565656;
+	padding: 10px;
+	flex-direction: column;
+}
+
+#container .grupo{
+	display: flex;
+	flex-direction: column;
+	margin: 5px;
+	background: white;
+}
+
+.topico{
+	background: #363636;
+	margin:1px;
+	color:white;
+	text-decoration: none;
+	display: flex;
+	justify-content: space-between;
+	padding: 2px;
+	padding-left:5px;
+}
+.topico a{
+	color:white;
+	text-decoration: none;
+}
+.topico span{
+	padding-right: 5px;
+	padding-left: 5px;
+}

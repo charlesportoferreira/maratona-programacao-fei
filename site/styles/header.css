@@ -1,0 +1,41 @@
+body{
+	margin: 0px;
+}
+#header{
+	display:flex;
+	justify-content: space-between;
+	text-align: left;
+	background-color: #363636;
+	padding: 30px;
+	margin-bottom: 20px;
+}
+
+#header a, #header button{
+	border-radius: 20px;
+	background-color: #565656;
+	padding: 10px;
+	padding-bottom: 5px;
+	color: white;
+	text-decoration: none;
+	outline: solid 1px white;
+	border: 0px;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+#header a:hover #header button:hover{
+	outline: solid 1px gold;
+	color: gold;
+	border: 0px;
+}
+
+#left, #titulo, #right{
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+#titulo{
+	font-size:18pt;
+	font-weight: bold;
+	color: white;
+}
