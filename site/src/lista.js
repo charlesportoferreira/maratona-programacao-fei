@@ -3,8 +3,7 @@ async function getData() {
 
 	let uid = undefined;
 	if(user) uid = user.id;
-	let query = db.from('topicos').select('*, topicos_resolvidos ( uid )');
-	if( uid ) query = query.eq('topicos_resolvidos.uid',uid);
+	let query = db.from('grupo_topicos').select('*');
 	const { data, error } = await query;
 
 	if (error) {
@@ -15,46 +14,65 @@ async function getData() {
 	const container = document.getElementById('container');
 
 	const groups = [];
+	const topics = {};
 	const topic_groups = {};
 	for(let t of data){
-		if(!groups.includes(t.grupo)){
-			groups.push(t.grupo);
-			topic_groups[t.grupo] = [];
+
+		if (!groups.some(g => g.gid === t.gid)) {
+			groups.push({ gid: t.gid, nome: t.nome_grupo });
+
+			topic_groups[t.gid] = [];
 		}
-		topic_groups[t.grupo].push(t);
+		
+		if( !topics[t.tid] ){
+			topics[t.tid] = {
+				'tid': t.tid,
+				'nome': t.nome,
+				'gid': t.gid,
+				'grupo_nome': t.nome_grupo,
+				'uids': [t.uid]
+			};
+		} else topics[t.tid].uids.push(t.uid);
+
+		if(!topic_groups[t.gid].includes(t.tid))
+			topic_groups[t.gid].push(t.tid);
 	}
+	console.log('groups',groups);
+	console.log('topics',topics);
+	console.log('topic_groups',topic_groups);
 
 	for(let g of groups){
 		const grupo = document.createElement("div");
 		grupo.classList.add('grupo');
 		const title = document.createElement("div");
-		title.innerText = g;
+		console.log(g);
+		title.innerText = `${g.gid} ${g.nome}`;
 		grupo.appendChild(title);
 		container.appendChild(grupo);
-		for(let t of topic_groups[g]){
+		for(let t of topic_groups[g.gid]){
 			const topicos = document.createElement("div");
 			topicos.classList.add('topico');
 			const label = document.createElement("label");
 			const checkbox = document.createElement("input");
 			checkbox.type = 'checkbox';
-			if( t.topicos_resolvidos.length > 0 ) checkbox.checked = true;
+			if( topics[t].uids.includes(uid) ) checkbox.checked = true;
 			checkbox.addEventListener('change', async (event)=>{
 				const isChecked = event.target.checked;
 				
 				if( isChecked ){
 					await db.from('topicos_resolvidos').insert([{
 						uid:uid,
-						tid:t.id
+						tid:t
 					}]);
 				} else {
 					await db.from('topicos_resolvidos').delete()
 					.eq('uid',uid)
-					.eq('tid',t.id);
+					.eq('tid',t);
 				}
 			});
 			const link = document.createElement("a");
-			link.innerText = t.nome;
-			link.href = `${PATH}/views/topico.html?id=${t.id}`;
+			link.innerText = topics[t].nome;
+			link.href = `${PATH}/views/topico.html?id=${t}`;
 			label.appendChild(checkbox);
 			label.appendChild(link);
 			topicos.appendChild(label);

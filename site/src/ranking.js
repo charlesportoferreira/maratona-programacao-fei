@@ -19,7 +19,8 @@ async function getData() {
 		const posicao = document.createElement('span');
 		const nome = document.createElement('span');
 		posicao.innerText = i+1;
-		nome.innerText = data[i].email;
+		console.log(data[i]);
+		nome.innerText = data[i].metadata.username;
 		label.appendChild(posicao);
 		label.appendChild(nome);
 		const problemas = document.createElement('span');
