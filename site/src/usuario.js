@@ -1,9 +1,10 @@
 async function getData() {
 	const { data:{user}, err } = await db.auth.getUser();
 
-	let uid = undefined:
+	let uid = undefined;
 	if(user) uid = user.id;
 	else window.location.href = `${PATH}/index.html`;
+
 	let query = db.from('problemas_resolvidos').select('*, problemas!left ( * )').eq('uid',uid);
 	const { data, error } = await query;
 
