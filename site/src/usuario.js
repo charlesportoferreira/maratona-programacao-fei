@@ -5,7 +5,11 @@ async function getData() {
 	if(user) uid = user.id;
 	else window.location.href = `${PATH}/index.html`;
 
-	let query = db.from('problemas_resolvidos').select('*, problemas!left ( * )').eq('uid',uid);
+	let query = db.from('problemas_resolvidos')
+		.select('*, problemas!left ( * )')
+		.eq('uid',uid)
+		.order('data')
+		.limit(10);
 	const { data, error } = await query;
 
 	if (error) {
