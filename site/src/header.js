@@ -5,7 +5,7 @@
 const header = document.getElementById("header");
 const left_tags = ['home','ranking','links','contato'];
 const logout_tags = ['login','sign up'];
-const PATH = '/home/rafel/repositoriogit/maratona-programacao-fei/site'
+const PATH = '/maratona-programacao-fei/site'
 const header_files = {
 	'home':`${PATH}/index.html`,
 	'links':`${PATH}/views/links.html`,
