@@ -29,6 +29,7 @@ async function getData() {
 		titulo.innerText = 'Historico de problemas';
 		historico.appendChild(titulo);
 	}
+	container.appendChild(historico);
 
 	for(let p of data){
 		console.log(p);
@@ -50,7 +51,7 @@ async function getData() {
 
 		problema.appendChild(dificuldade);
 
-		container.appendChild(problema);
+		historico.appendChild(problema);
 	}
 
 	console.log(data);
