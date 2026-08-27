@@ -5,7 +5,7 @@
 const header = document.getElementById("header");
 const left_tags = ['home','ranking','links','contato'];
 const logout_tags = ['login','sign up'];
-const PATH = '/home/rafel/Documents/Maratona_site'
+const PATH = '/home/rafel/repositoriogit/maratona-programacao-fei/site'
 const header_files = {
 	'home':`${PATH}/index.html`,
 	'links':`${PATH}/views/links.html`,
@@ -27,6 +27,7 @@ header.appendChild(left);
 
 for(let i = 0; i < left_tags.length; i++){
 	const button = document.createElement("a");
+	button.id = `header_${left_tags[i]}`;
 	button.href = header_files[left_tags[i]];
 	button.textContent = left_tags[i];
 	left.appendChild(button);

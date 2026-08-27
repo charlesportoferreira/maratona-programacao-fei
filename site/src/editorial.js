@@ -14,12 +14,15 @@ async function getData(){
 	const nome = document.createElement('h2');
 	nome.innerText = data[0].problemas.nome;
 
-	const descricao = document.createElement('pre');
-	descricao.innerText = data[0].descricao;
+	const descricao = document.createElement('div');
+	descricao.classList.add('descricao');
+	descricao.innerHTML = marked.parse(data[0].descricao);
 	container.appendChild(nome);
 	container.appendChild(descricao);
 
 	console.log('Successfully connected! Your data:', data)
+	const layoutReadyEvent = new CustomEvent('layoutReady');
+	window.dispatchEvent(layoutReadyEvent);
 }
 getData();
 

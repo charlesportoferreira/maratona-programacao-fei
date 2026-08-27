@@ -1,9 +1,10 @@
 const canvas = document.createElement("canvas");
 canvas.id = 'canvas';
+
 document.body.prepend(canvas);
 const ctx = canvas.getContext("2d");
 
-logo = [
+const logo = [
 '#...#....###....####.....###....#####....###....#...#....###.',
 '##.##...#...#...#...#...#...#.....#.....#...#...##..#...#...#',
 '#.#.#...#...#...####....#...#.....#.....#...#...#.#.#...#...#',
@@ -23,11 +24,11 @@ logo = [
 ];
 
 const tamanho = 10;
-const offsetx = 0
-const offsety = 0;
+const offsetx = 35;
+const offsety = 30;
 
-canvas.width = innerWidth;
-canvas.height = innerHeight;
+canvas.width = Math.max(window.innerWidth,document.body.offsetWidth);
+canvas.height = Math.max(window.innerHeight,document.body.offsetHeight);
 let colunas = Math.ceil(canvas.height / tamanho);
 let linhas = Math.ceil(canvas.width / tamanho);
 let visitados = Array.from({length: linhas},()=>Array(colunas).fill(0)); 
@@ -134,29 +135,34 @@ function draw_border(){
 function draw(){
 	canvas.width = Math.max(window.innerWidth, document.body.offsetWidth);
 	canvas.height = Math.max(window.innerHeight, document.body.offsetHeight);
+	console.log(linhas,colunas);
 	colunas = Math.ceil(canvas.height / tamanho);
 	linhas = Math.ceil(canvas.width / tamanho);
 	visitados = Array.from({length: linhas},()=>Array(colunas).fill(0));
+	const fill = 0.45;
 
-	for(let i = 0; i < logo.length; i++){
-		for(let j = 0; j < logo[i].length; j++){
-			if(logo[i][j] == '#') visitados[j + offsetx][i+offsety] = 1;
-		}
-	}
+	// for(let i = 0; i < logo.length; i++){
+	// 	for(let j = 0; j < logo[i].length; j++){
+	// 		if(logo[i][j] == '#') visitados[j + offsetx][i+offsety] = 1;
+	// 	}
+	// }
+
+	// ctx.beginPath();
+	// ctx.strokeStyle = '#114064';
+	// ctx.lineWidth = 3;
+	// draw_border();
+	// ctx.stroke();
 
 	ctx.beginPath();
 	ctx.strokeStyle = '#114064';
 	ctx.lineWidth = 2;
-	draw_border();
-	ctx.stroke();
-
-	ctx.beginPath();
 	for(let i = 0; i < linhas; i++)
 		for(let j = 0; j < colunas; j++)
-			if( !visitados[i][j]) dfs(i,j,0.5);
+			if( !visitados[i][j]) dfs(i,j,fill);
 	ctx.stroke();
 }
 
 draw();
 
 window.addEventListener("resize",draw);
+window.addEventListener('layoutReady', () => draw());

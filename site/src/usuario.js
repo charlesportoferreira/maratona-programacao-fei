@@ -38,6 +38,8 @@ async function getData() {
 	}
 
 	console.log(data);
+	const layoutReadyEvent = new CustomEvent('layoutReady');
+	window.dispatchEvent(layoutReadyEvent);
 }
 
 getData()

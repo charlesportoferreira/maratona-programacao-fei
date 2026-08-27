@@ -7,7 +7,7 @@
 	border-radius: 20px;
 }
 
-#container .grupo{
+.grupo{
 	display: flex;
 	flex-direction: column;
 	margin: 5px;
@@ -16,7 +16,41 @@
 	padding: 5px;
 }
 
-.topico{
+.linha{
+	display: flex;
+	justify-content: space-between;
+}
+
+
+.grupo .topico{
+	cursor: initial;
+	display: none;
+}
+
+.grupo .toggle{
+	position:absolute;
+	opacity: 0;
+	width: 0;
+	height; 0;
+	margin: 0;
+	padding: 0;
+	pointer-events: none;
+}
+
+.clickable:hover{
+	background: #115084;
+	cursor:pointer;
+}
+.arrow{
+	transition: transform 0.5s ease;
+}
+
+.toggle:checked + .linha .arrow{
+	transform: rotate(-450deg);
+}
+
+.toggle:checked ~ .topico{
+	display:block;
 	border-radius: 10px;
 	background: #eeeeff;
 	margin:1px;
@@ -27,11 +61,68 @@
 	padding-left:5px;
 	color:black;
 }
-.topico a{
+
+#container .grupo:has(.toggle:checked){
+	background: #115084;
+}
+
+.problema{
+	border-radius: 10px;
+	background: #eeeeff;
+	margin:1px;
+	text-decoration: none;
+	display: flex;
+	justify-content: space-between;
+	padding: 2px;
+	padding-left:5px;
+	color:black;
+}
+
+.topico{
+	display: none;
+}
+
+.topico a, .problema a{
 	text-decoration: none;
 	color:black;
 }
-.topico span{
+
+.topico span, .problema span{
 	padding-right: 5px;
 	padding-left: 5px;
+}
+
+.topico input{
+	cursor: pointer;
+}
+
+.left{
+	width:33%;
+	text-align: left;
+}
+
+.center{
+	width:33%;
+	text-align: center;
+}
+
+.right{
+	width:33%;
+	text-align: right;
+
+}
+.descricao{
+	width:auto;
+	border-radius: 10px;
+	margin: 0px;
+	padding: 10px;
+	background: #eeeeff;
+	color: black;
+	font-size: 13pt;
+}
+
+.descricao pre:has(code){
+	padding: 5px;
+	border-radius: 5px;
+	background: #bbbbcc;
 }

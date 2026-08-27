@@ -23,22 +23,67 @@ async function getData(){
 			problems[p.pid] = {
 				'tid': p.tid,
 				'pid': p.pid,
+				'topico_nome': p.topico_nome,
 				'nome': p.nome,
 				'link': p.link,
 				'dificuldade': p.dificuldade,
-				'uids': [p.uid]
+				'uids': [p.uid],
+				'editorial': p.editorial
 			};
 		} else problems[p.pid].uids.push(p.uid);
 	}
 
 	console.log(problems);
+	
+	const topico = document.createElement("h2");
+	topico.innerText = data[0].topico_nome;
+	container.appendChild(topico);
+
+	const introducao = document.createElement("div");
+	introducao.classList.add('grupo');
+	introducao.innerText = "Introdução";
+	container.appendChild(introducao);
+
+	{
+		const descricao = document.createElement("div");
+		descricao.classList.add('descricao');
+		descricao.innerHTML = marked.parse(data[0].introducao);
+		introducao.appendChild(descricao);
+
+	}
+
+	const problemas = document.createElement("div");
+	problemas.classList.add('grupo')
+	container.appendChild(problemas);
+
+	{
+		const linha = document.createElement("div");
+		linha.classList.add('linha');
+
+		const titulo = document.createElement("div");
+		titulo.classList.add('left');
+		titulo.innerText = "Problemas";
+
+		const editoriais = document.createElement("div");
+		editoriais.classList.add('center');
+		editoriais.innerText = "Editoriais";
+
+		const dificuldades = document.createElement("div");
+		dificuldades.classList.add('right');
+		dificuldades.innerText = "Dificuldade";
+		linha.appendChild(titulo);
+		linha.appendChild(editoriais);
+		linha.appendChild(dificuldades);
+		problemas.appendChild(linha);
+	}
 
 	for(const [key,p] of Object.entries(problems)){
 		console.log(p);
 		const problema = document.createElement("div");
-		problema.classList.add('topico');
+		problema.classList.add('problema');
 
-		const label = document.createElement("label");
+		const label = document.createElement("div");
+		label.classList.add('left');
 		const checkbox = document.createElement("input");
 		checkbox.type = 'checkbox';
 		if(p.uids.includes(uid)) checkbox.checked = true;
@@ -59,7 +104,7 @@ async function getData(){
 
 		const link = document.createElement("a");
 		link.href = p.link;
-		link.innerText = p.nome;
+		link.innerText = `${p.pid}. ${p.nome}`;
 
 		label.appendChild(checkbox);
 		label.appendChild(link);
@@ -67,17 +112,23 @@ async function getData(){
 		problema.appendChild(label);
 		
 		const editorial = document.createElement("a");
-		editorial.href = `${PATH}/views/editorial.html?id=${p.id}`;
+		editorial.classList.add('center');
+		editorial.href = `${PATH}/views/editorial.html?id=${p.pid}`;
 		editorial.innerText = "editorial";
-		problema.appendChild(editorial);
+		if(p.editorial) problema.appendChild(editorial);
 
 		const dificuldade = document.createElement("span");
+		dificuldade.classList.add('right');
 		dificuldade.innerText = p.dificuldade;
+
 		problema.appendChild(dificuldade);
-		container.appendChild(problema);
+		problemas.appendChild(problema);
 	}
 
 	console.log('Successfully connected! Your data:', data)
+	const layoutReadyEvent = new CustomEvent('layoutReady');
+	window.dispatchEvent(layoutReadyEvent);
 }
+
 getData();
 

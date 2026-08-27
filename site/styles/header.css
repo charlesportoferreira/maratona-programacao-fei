@@ -3,6 +3,7 @@ body{
 	font-family: 'Sans-serif';
 	background: #eeeeff;
 	color: #eeeeff;
+	padding-bottom: 40px;
 }
 a{
 	text-decoration: none;
@@ -44,7 +45,7 @@ a{
 }
 
 #left, #titulo, #right{
-	width: 33%;
+	width: auto;
 	margin-top: auto;
 	margin-bottom: auto;
 }

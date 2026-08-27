@@ -44,15 +44,40 @@ async function getData() {
 	for(let g of groups){
 		const grupo = document.createElement("div");
 		grupo.classList.add('grupo');
-		const title = document.createElement("div");
-		console.log(g);
-		title.innerText = `${g.gid} ${g.nome}`;
-		grupo.appendChild(title);
+		grupo.classList.add('clickable');
+
+		const toggle = document.createElement('input');
+		toggle.classList.add('toggle');
+		toggle.id = `toggle_grupo_${g.gid}`;
+		toggle.type = 'checkbox';
+
+		const linha = document.createElement('label');
+		linha.classList.add('linha');
+		linha.classList.add('clickable');
+		linha.setAttribute('for',`toggle_grupo_${g.gid}`);
+
+
+		const title = document.createElement("label");
+		title.setAttribute('for',`toggle_grupo_${g.gid}`);
+		title.classList.add('clickable');
+		title.innerText = `${g.gid}. ${g.nome}`;
+
+		const arrow = document.createElement('label');
+		arrow.classList.add('arrow');
+		arrow.classList.add('clickable');
+		arrow.setAttribute('for',`toggle_grupo_${g.gid}`);
+		arrow.innerText = '<';
+
+		linha.appendChild(title);
+		linha.appendChild(arrow);
+		grupo.appendChild(toggle);
+		grupo.appendChild(linha);
 		container.appendChild(grupo);
 		for(let t of topic_groups[g.gid]){
 			const topicos = document.createElement("div");
 			topicos.classList.add('topico');
 			const label = document.createElement("label");
+			label.classList.add('left');
 			const checkbox = document.createElement("input");
 			checkbox.type = 'checkbox';
 			if( topics[t].uids.includes(uid) ) checkbox.checked = true;
@@ -71,7 +96,7 @@ async function getData() {
 				}
 			});
 			const link = document.createElement("a");
-			link.innerText = topics[t].nome;
+			link.innerText = `${t}. ${topics[t].nome}`;
 			link.href = `${PATH}/views/topico.html?id=${t}`;
 			label.appendChild(checkbox);
 			label.appendChild(link);
@@ -81,6 +106,8 @@ async function getData() {
 	}
 
 	console.log(data);
+	const layoutReadyEvent = new CustomEvent('layoutReady');
+	window.dispatchEvent(layoutReadyEvent);
 }
 
 getData()
