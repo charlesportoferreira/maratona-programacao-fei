@@ -22,6 +22,14 @@ async function getData() {
 		container.appendChild(nome);
 	}
 
+	const historico = document.createElement('div');
+	historico.classList.add('grupo');
+	{
+		const titulo = document.createElement('label');
+		titulo.innerText = 'Historico de problemas';
+		historico.appendChild(titulo);
+	}
+
 	for(let p of data){
 		console.log(p);
 		const problema = document.createElement("div");
