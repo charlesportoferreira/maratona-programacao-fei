@@ -44,6 +44,7 @@ async function getData() {
 
 		const link = document.createElement("a");
 		link.href = p.problemas.link;
+		link.target = '_blank';
 		link.innerText = `${p.pid}. ${p.problemas.nome}`;
 
 		label.appendChild(link);

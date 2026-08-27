@@ -104,6 +104,7 @@ async function getData(){
 
 		const link = document.createElement("a");
 		link.href = p.link;
+		link.target = '_blank';
 		link.innerText = `${p.pid}. ${p.nome}`;
 
 		label.appendChild(checkbox);
