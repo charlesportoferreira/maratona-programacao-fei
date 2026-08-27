@@ -8,7 +8,7 @@ async function getData() {
 	let query = db.from('problemas_resolvidos')
 		.select('*, problemas!left ( * )')
 		.eq('uid',uid)
-		.order('data')
+		.order('data', {anscending: false})
 		.limit(10);
 	const { data, error } = await query;
 
