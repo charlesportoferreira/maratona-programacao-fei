@@ -1,10 +1,10 @@
 async function getData() {
 	const { data:{user}, err } = await db.auth.getUser();
 
-	let uid = undefined;
+	let uid = undefined:
 	if(user) uid = user.id;
 	else window.location.href = `${PATH}/index.html`;
-	let query = db.from('usuarios').select('*, problemas_resolvidos!left ( *,problemas_resolvidos!left ( * ) )');
+	let query = db.from('problemas_resolvidos').select('*, problemas!left ( * )').eq('uid',uid);
 	const { data, error } = await query;
 
 	if (error) {
@@ -14,26 +14,33 @@ async function getData() {
 
 	const container = document.getElementById('container');
 
+	{
+		const nome = document.createElement('h2');
+		nome.innerText = user.user_metadata.username;
+
+		container.appendChild(nome);
+	}
+
 	for(let p of data){
 		console.log(p);
-		p = p.problemas;
 		const problema = document.createElement("div");
-		problema.classList.add('topico');
+		problema.classList.add('problema');
 
 		const label = document.createElement("label");
 
 		const link = document.createElement("a");
-		link.href = p.link;
-		link.innerText = p.nome;
+		link.href = p.problemas.link;
+		link.innerText = `${p.pid}. ${p.problemas.nome}`;
 
-		label.appendChild(checkbox);
 		label.appendChild(link);
 
 		problema.appendChild(label);
 
 		const dificuldade = document.createElement("span");
-		dificuldade.innerText = p.dificuldade;
+		dificuldade.innerText = p.problemas.dificuldade;
+
 		problema.appendChild(dificuldade);
+
 		container.appendChild(problema);
 	}
 
