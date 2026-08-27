@@ -126,3 +126,38 @@
 	border-radius: 5px;
 	background: #bbbbcc;
 }
+
+.auth{
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	border-radius: 20px;
+	margin: auto;
+	width: 50%;
+	text-align: center;
+	background: #114064;
+}
+
+.auth form{
+	display: flex;
+	flex-direction: column;
+}
+.auth form input{
+	margin: 10px;
+	width: 80%;
+}
+.auth form button{
+	margin: auto;
+	width: 50%;
+	border-radius: 20px;
+	background-color: #114064;
+	padding: 10px;
+	padding-bottom: 5px;
+	color: #eeeeff;
+	outline: solid 1px #1190b4;
+	border: 0px;
+}
+.auth form button:hover{
+	background-color: #1190b4;
+	cursor:pointer;
+}

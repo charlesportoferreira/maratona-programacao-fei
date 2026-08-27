@@ -12,13 +12,20 @@
 		<div id="header"> </div>
 		<div id="titulo"> Home </div>
 
-		<div id='container'>
+		<div class="auth">
 			<h2> Login </h2>
 			<form id='auth_login'>
-				<input type='email' id='login_email' placeholder='email' required>
-				<input type='password' id='login_senha' placeholder='senha' required>
+				<div class='linha'>
+					<span> Email: </span>
+					<input type='email' id='login_email' placeholder='email' required>
+				</div>
+				<div class='linha'>
+					<span> Senha: </span>
+					<input type='password' id='login_senha' placeholder='senha' required>
+				</div>
 				<button type='button' id='login_button' onclick='login()'> Login </button>
 			</form>
+			<div id='response'></div>
 		</div>
 
 		<script src="./../src/session.js" type="text/javascript"></script>
