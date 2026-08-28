@@ -30,6 +30,12 @@ a{
 	margin-left: 5px;
 }
 
+#header button{
+	font-size: 12pt;
+	padding-top:7px;
+	padding-bottom:7px;
+}
+
 #header a:hover, #header button:hover{
 	background: #1190b4;
 	border: 0px;
