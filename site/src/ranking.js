@@ -38,10 +38,10 @@ async function getData() {
 		linha.classList.add('problema');
 		const label = document.createElement('label');
 		const posicao = document.createElement('span');
-		const nome = document.createElement('span');
+		const nome = document.createElement('a');
 		posicao.innerText = i+1;
-		console.log(data[i]);
 		nome.innerText = data[i].metadata.username;
+		nome.href = `${PATH}/views/usuario.html?uid=${data[i].uid}`;
 		label.appendChild(posicao);
 		label.appendChild(nome);
 		const problemas = document.createElement('span');
@@ -53,7 +53,6 @@ async function getData() {
 		ranking.appendChild(linha);
 	}
 
-	console.log(data);
 	const layoutReadyEvent = new CustomEvent('layoutReady');
 	window.dispatchEvent(layoutReadyEvent);
 }

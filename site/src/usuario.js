@@ -1,15 +1,18 @@
 async function getData() {
-	const { data:{user}, err } = await db.auth.getUser();
+	let uid = new URLSearchParams(window.location.search).get('uid');
+	if( !uid ) window.location = `${PATH}/index.html`;
 
-	let uid = undefined;
-	if(user) uid = user.id;
-	else window.location.href = `${PATH}/index.html`;
+	const { data:user, err } = await db.from('profiles')
+		.select('*')
+		.eq('uid',uid)
+		.single();
 
 	let query = db.from('problemas_resolvidos')
 		.select('*, problemas!left ( * )')
 		.eq('uid',uid)
 		.order('data', {ascending: false})
 		.limit(10);
+
 	const { data, error } = await query;
 
 	if (error) {
@@ -21,7 +24,7 @@ async function getData() {
 
 	{
 		const nome = document.createElement('h2');
-		nome.innerText = user.user_metadata.username;
+		nome.innerText = user.metadata.username;
 
 		container.appendChild(nome);
 	}
@@ -36,7 +39,6 @@ async function getData() {
 	container.appendChild(historico);
 
 	for(let p of data){
-		console.log(p);
 		const problema = document.createElement("div");
 		problema.classList.add('problema');
 
@@ -59,7 +61,6 @@ async function getData() {
 		historico.appendChild(problema);
 	}
 
-	console.log(data);
 	const layoutReadyEvent = new CustomEvent('layoutReady');
 	window.dispatchEvent(layoutReadyEvent);
 }
