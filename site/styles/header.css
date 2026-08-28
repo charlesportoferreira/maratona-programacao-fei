@@ -18,6 +18,7 @@ a{
 }
 
 #header a, #header button{
+	position:relative;
 	border-radius: 20px;
 	background-color: #114064;
 	padding: 10px;
@@ -50,14 +51,17 @@ a{
 	margin-bottom: auto;
 }
 
-#titulo{
-	font-size:18pt;
-	font-weight: bold;
-}
-
-#canvas{
+#fundo{
 	background: #eeeeff;
 	position: absolute;
 	float: left;
 	z-index:-1;
+}
+
+#logo{
+	background: #114064;
+	position: absolute;
+	left:-40px;
+	top:-22px;
+	z-index:2;
 }

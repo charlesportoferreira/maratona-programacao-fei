@@ -1,38 +1,11 @@
-const canvas = document.createElement("canvas");
-canvas.id = 'canvas';
+const fundo = document.createElement("canvas");
+fundo.id = 'fundo';
+document.body.prepend(fundo);
+const ctx = fundo.getContext("2d");
 
-document.body.prepend(canvas);
-const ctx = canvas.getContext("2d");
-
-const logo = [
-'#...#....###....####.....###....#####....###....#...#....###.',
-'##.##...#...#...#...#...#...#.....#.....#...#...##..#...#...#',
-'#.#.#...#...#...####....#...#.....#.....#...#...#.#.#...#...#',
-'#...#...#####...#..#....#####.....#.....#...#...#..##...#####',
-'#...#...#...#...#...#...#...#.....#......###....#...#...#...#',
-'.............................................................',
-'.............................................................',
-'.............................................................',
-'....................########...########...##.................',
-'....................########...########...##.................',
-'....................##.........##.........##.................',
-'....................#####......#####......##.................',
-'....................#####......#####......##.................',
-'....................##.........##.........##.................',
-'....................##.........########...##.................',
-'....................##.........########...##.................'
-];
-
-const tamanho = 10;
-const offsetx = 35;
-const offsety = 30;
-
-canvas.width = Math.max(window.innerWidth,document.body.offsetWidth);
-canvas.height = Math.max(window.innerHeight,document.body.offsetHeight);
-let colunas = Math.ceil(canvas.height / tamanho);
-let linhas = Math.ceil(canvas.width / tamanho);
+let tamanho = 10;
+let colunas = 0, linhas = 0;
 let visitados = Array.from({length: linhas},()=>Array(colunas).fill(0)); 
-
 
 function dfs(xi,yi,fill){
 	let pilha = [];
@@ -65,93 +38,13 @@ function dfs(xi,yi,fill){
 	}
 }
 
-function draw_border(){
-	const direcoes = [
-		[1,0], [-1,0], [0,1], [0,-1]
-	];
-	const diagonais = [
-		[1,1], [1,-1], [-1,1], [-1,-1]
-	];
-	for(let i = 0; i < linhas; i++){
-		for(let j = 0; j < colunas; j++){
-			if(visitados[i][j] == 1) continue;
-			visitados[i][j] == 1;
-
-			let borda = false;
-			for(let [x,y] of direcoes){
-				let nx = i + x;
-				let ny = j + y;
-				if( nx < 0 || ny < 0 || nx >= linhas || ny >= colunas ) continue;
-				if(visitados[nx][ny] == 1){
-					borda = true;
-					break;
-				}
-			}
-			for(let [x,y] of diagonais){
-				let nx = i + x;
-				let ny = j + y;
-				if( nx < 0 || ny < 0 || nx >= linhas || ny >= colunas ) continue;
-				if(visitados[nx][ny] == 1){
-					borda = true;
-					break;
-				}
-			}
-			if( !borda ) continue;
-
-			for(let [x,y] of direcoes){
-				let nx = i + x;
-				let ny = j + y;
-				if( nx < 0 || ny < 0 || nx >= linhas || ny >= colunas ) continue;
-				if(visitados[nx][ny]) continue;
-				let borda2 = false;
-				for(let [dx,dy] of direcoes){
-					let nnx = nx + dx;
-					let nny = ny + dy;
-					if( nnx < 0 || nny < 0 || nnx >= linhas || nny >= colunas ) continue;
-					if(visitados[nnx][nny]){
-						borda2 = true;
-						break;
-					}
-				}
-				for(let [dx,dy] of diagonais){
-					let nnx = nx + dx;
-					let nny = ny + dy;
-					if( nnx < 0 || nny < 0 || nnx >= linhas || nny >= colunas ) continue;
-					if(visitados[nnx][nny]){
-						borda2 = true;
-						break;
-					}
-				}
-				if( !borda2 ) continue;
-
-				ctx.moveTo(i*tamanho,j*tamanho);
-				ctx.lineTo(nx*tamanho,ny*tamanho);
-			}
-
-		}
-	}
-}
-
 function draw(){
-	canvas.width = Math.max(window.innerWidth, document.body.offsetWidth);
-	canvas.height = Math.max(window.innerHeight, document.body.offsetHeight);
-	console.log(linhas,colunas);
-	colunas = Math.ceil(canvas.height / tamanho);
-	linhas = Math.ceil(canvas.width / tamanho);
+	fundo.width = Math.max(window.innerWidth, document.body.offsetWidth);
+	fundo.height = Math.max(window.innerHeight, document.body.offsetHeight);
+	colunas = Math.ceil(fundo.height / tamanho);
+	linhas = Math.ceil(fundo.width / tamanho);
 	visitados = Array.from({length: linhas},()=>Array(colunas).fill(0));
 	const fill = 0.45;
-
-	// for(let i = 0; i < logo.length; i++){
-	// 	for(let j = 0; j < logo[i].length; j++){
-	// 		if(logo[i][j] == '#') visitados[j + offsetx][i+offsety] = 1;
-	// 	}
-	// }
-
-	// ctx.beginPath();
-	// ctx.strokeStyle = '#114064';
-	// ctx.lineWidth = 3;
-	// draw_border();
-	// ctx.stroke();
 
 	ctx.beginPath();
 	ctx.strokeStyle = '#114064';
@@ -161,7 +54,6 @@ function draw(){
 			if( !visitados[i][j]) dfs(i,j,fill);
 	ctx.stroke();
 }
-
 draw();
 
 window.addEventListener("resize",draw);

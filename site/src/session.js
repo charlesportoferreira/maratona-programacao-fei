@@ -5,9 +5,6 @@ const { createClient } = supabase;
 const db = createClient(supabaseUrl, supabaseKey);
 
 db.auth.onAuthStateChange((event, session) => {
-	if (session) {
-		console.log("logado");
-	} else {
-		console.log("nao logado");
-	}
+	if (session) console.log("logado");
+	else console.log("nao logado");
 });
