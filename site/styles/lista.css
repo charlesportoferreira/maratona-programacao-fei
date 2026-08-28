@@ -161,3 +161,13 @@
 	background-color: #1190b4;
 	cursor:pointer;
 }
+
+#profile{
+	position: relative;
+}
+
+#user_statistics{
+	background: '#eeeeff';
+	width: 100px;
+	height: 100px;
+}

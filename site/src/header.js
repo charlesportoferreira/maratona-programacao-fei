@@ -3,7 +3,7 @@
 // .classList();
 
 const header = document.getElementById("header");
-const left_tags = ['home','ranking','links','contato'];
+const left_tags = ['ranking','links','contato'];
 const logout_tags = ['login','sign up'];
 const PATH = '/maratona-programacao-fei/site'
 const header_files = {
@@ -19,6 +19,10 @@ const header_files = {
 async function logout(){
 	const { error } = await db.auth.signOut();
 	if( error ) console.log( error.message );
+}
+
+function home(){
+	return window.location = header_files['home'];
 }
 
 const left = document.createElement("div");
@@ -71,14 +75,19 @@ db.auth.onAuthStateChange((event,session) => {
 
 const canvas = document.createElement("canvas");
 canvas.id = 'logo';
-document.getElementById('header_home').innerText = 'aaaaaaaaaaaaaaaaa';
-document.getElementById('header_home').prepend(canvas);
+left.prepend(canvas);
+canvas.setAttribute("onclick","home()");
 const ltx = canvas.getContext('2d');
 
 const offsetx = 5;
 const offsety = 4;
+// const offsety = 1;
 canvas.width = 215;
+// canvas.width = 350;
+// canvas.width = 500;
+// canvas.width = document.body.offsetWidth;
 canvas.height = 79;
+// canvas.height = 100;
 let tamanho_logo = 7;
 let colunas_logo = Math.ceil(canvas.height / tamanho_logo );
 let linhas_logo = Math.ceil(canvas.width / tamanho_logo );
@@ -86,12 +95,36 @@ let visitados_logo = Array.from({length: linhas_logo},()=>Array(colunas_logo).fi
 const fill = 0.45;
 
 const logo = [
-'#####...#####...#####.',
-'#.......#.........#...',
-'###.....####......#...',
-'#.......#.........#...',
-'#.......#####...#####.'
+'#####...#####...#####...',
+'#.......#.........#.....',
+'###.....####......#.....',
+'#.......#.........#.....',
+'#.......#####...#####...'
 ];
+
+// const logo = [
+// '#...#....###....####.....###....#####....###....#...#....###....#####...#####...#####...',
+// '##.##...#...#...#...#...#...#.....#.....#...#...##..#...#...#...#.......#.........#.....',
+// '#.#.#...#...#...####....#...#.....#.....#...#...#.#.#...#...#...###.....####......#.....',
+// '#...#...#####...#..#....#####.....#.....#...#...#..##...#####...#.......#.........#.....',
+// '#...#...#...#...#...#...#...#.....#......###....#...#...#...#...#.......#####...#####...'
+// ];
+
+// const logo = [
+// '#...#....###....####.....###....#####....###....#...#....###.',
+// '##.##...#...#...#...#...#...#.....#.....#...#...##..#...#...#',
+// '#.#.#...#...#...####....#...#.....#.....#...#...#.#.#...#...#',
+// '#...#...#####...#..#....#####.....#.....#...#...#..##...#####',
+// '#...#...#...#...#...#...#...#.....#......###....#...#...#...#',
+// '.............................................................',
+// '.............................................................',
+// '.............................................................',
+// '.....................#####...#####...#####...................',
+// '.....................#.......#.........#.....................',
+// '.....................###.....####......#.....................',
+// '.....................#.......#.........#.....................',
+// '.....................#.......#####...#####...................'
+// ];
 
 function dfs_logo(xi,yi,fill){
 	let pilha = [];

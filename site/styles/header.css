@@ -13,7 +13,7 @@ a{
 	justify-content: space-between;
 	text-align: left;
 	background-color: #114064;
-	padding: 30px;
+	padding: 5px;
 	margin-bottom: 20px;
 }
 
@@ -26,6 +26,7 @@ a{
 	color: #eeeeff;
 	outline: solid 1px #1190b4;
 	border: 0px;
+	margin: auto;
 	margin-right: 5px;
 	margin-left: 5px;
 }
@@ -52,6 +53,8 @@ a{
 }
 
 #left, #titulo, #right{
+	display:flex;
+	justify-content: space-around;
 	width: auto;
 	margin-top: auto;
 	margin-bottom: auto;
@@ -66,8 +69,13 @@ a{
 
 #logo{
 	background: #114064;
-	position: absolute;
-	left:-40px;
-	top:-22px;
+	/* position: absolute; */
+	/* left:-40px; */
+	/* top:-22px; */
+	top: 0px;
+	left: 10px;
 	z-index:2;
+}
+#logo:hover{
+	cursor: pointer;
 }
