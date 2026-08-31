@@ -65,7 +65,7 @@ async function getData() {
 		topicos_resolvidos.classList.add('status');
 		{ // Topicos Resolvidos 
 			let total_resolvido = 0;
-			if(estatisiticas[0]) total_resolvido = estatisticas[0].solved_topics;
+			if(estatisticas[0]) total_resolvido = estatisticas[0].solved_topics;
 			const resolvidos_text1 = document.createElement("h3");
 			resolvidos_text1.innerText = "Topicos Resolvidos:";
 
