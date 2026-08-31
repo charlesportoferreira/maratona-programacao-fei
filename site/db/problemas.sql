@@ -233,7 +233,7 @@ values
 (210,'https://judge.beecrowd.com/pt/problems/view/1039','Flores de Fogo'),
 (211,'https://judge.beecrowd.com/pt/problems/view/1124','Elevador'),
 (212,'https://judge.beecrowd.com/pt/problems/view/1223','Tobogan de Bolinhas'),
-(213,'https://judge.beecrowd.com/pt/problems/view/1295','Problema dos Pares Mais Pró…'),
+(213,'https://judge.beecrowd.com/pt/problems/view/1295','Problema dos Pares Mais Próximos'),
 (214,'https://judge.beecrowd.com/pt/problems/view/1554','Bilhar N+1'),
 (215,'https://judge.beecrowd.com/pt/problems/view/1296','Medianas'),
 (216,'https://judge.beecrowd.com/pt/problems/view/1560','Energia dos Triângulos'),
@@ -248,4 +248,21 @@ values
 (225,'https://judge.beecrowd.com/pt/problems/view/2878','Cortador de Pizza'),
 
 -- tecnicas basicas
-(226,'https://cses.fi/problemset/task/3220','Sliding Window Sum');
+(226,'https://cses.fi/problemset/task/3220','Sliding Window Sum'),
+
+-- Segment Tree
+(227,'https://codeforces.com/edu/course/2/lesson/4/1/practice/contest/273169/problem/A','Segment Tree for the Sum'),
+(228,'https://codeforces.com/edu/course/2/lesson/4/1/practice/contest/273169/problem/B','Segment Tree for the Minimum'),
+(229,'https://codeforces.com/edu/course/2/lesson/4/1/practice/contest/273169/problem/C','Number of Minimums on a Segment'),
+
+-- DFS
+(230,'https://cses.fi/problemset/task/1666','Building Roads'),
+
+-- Knapsack
+(231,'https://cses.fi/problemset/task/1633','Dice Combinations'),
+(232,'https://cses.fi/problemset/task/1635','Coin Combinations I'),
+
+-- Binary Search
+(233,'https://codeforces.com/edu/course/2/lesson/6/1/practice/contest/283911/problem/A','Binary Search'),
+(234,'https://codeforces.com/edu/course/2/lesson/6/1/practice/contest/283911/problem/B','Closest to the Left'),
+(235,'https://codeforces.com/edu/course/2/lesson/6/1/practice/contest/283911/problem/C','Closest to the Right');
