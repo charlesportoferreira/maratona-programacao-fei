@@ -48,6 +48,10 @@ async function getData() {
 
 		const toggle = document.createElement('input');
 		toggle.classList.add('toggle');
+		toggle.addEventListener('change', async (event)=>{
+			const layoutReadyEvent = new CustomEvent('layoutReady');
+			window.dispatchEvent(layoutReadyEvent);
+		});
 		toggle.id = `toggle_grupo_${g.gid}`;
 		toggle.type = 'checkbox';
 

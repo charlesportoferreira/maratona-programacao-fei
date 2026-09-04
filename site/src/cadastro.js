@@ -18,6 +18,6 @@ async function cadastro(){
 		// response.innerText = "Check your email for a verification link!";
 		// const res = document.getElementById('response')
 		// res.appendChild(response);
-		window.location.href = `${PATH}/views/login.html`;
+		window.location.href = `${PATH}/index.html`;
 	}
 }
