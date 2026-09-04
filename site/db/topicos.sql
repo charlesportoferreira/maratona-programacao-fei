@@ -15,9 +15,19 @@ values
 
 -- Estruturas de dados
 (12,'Segment Tree', 2,'Point Update, Range Query'),
+(20,'Disjoing set Union (DSU)', 2,'Point Update, Range Query'),
+(21,'Ordered Set', 2,'Point Update, Range Query'),
+(22,'Trie', 2,'Point Update, Range Query'),
 
 -- Programação Dinamica
 (13,'DP Knapsack', 3, 'Introdução a programação dinamica, Problema da mochila'),
+(23,'Digit DP', 3,''),
+(24,'Bitmask DP', 3,''),
+(25,'Sum Over Subsets DP (SOS DP)', 3,''),
+(26,'Open and Close Interval Trick',3,''),
+(27,'Longest Increasing Subsequence (LIS)',3,''),
+(28,'Interval DP',3,''),
+(29,'Edit Distance',3,''),
 
 -- Grafos
 (14,'DFS', 4, 'Introdução a grafos, busca em profundidade'),

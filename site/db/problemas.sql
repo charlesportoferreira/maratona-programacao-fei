@@ -265,4 +265,121 @@ values
 -- Binary Search
 (233,'https://codeforces.com/edu/course/2/lesson/6/1/practice/contest/283911/problem/A','Binary Search'),
 (234,'https://codeforces.com/edu/course/2/lesson/6/1/practice/contest/283911/problem/B','Closest to the Left'),
-(235,'https://codeforces.com/edu/course/2/lesson/6/1/practice/contest/283911/problem/C','Closest to the Right');
+(235,'https://codeforces.com/edu/course/2/lesson/6/1/practice/contest/283911/problem/C','Closest to the Right'),
+
+-- Segment Tree
+(236,'https://codeforces.com/edu/course/2/lesson/4/3/practice/contest/274545/problem/A','Inversions'),
+(237,'https://cses.fi/problemset/task/1144/','Salary Queries'),
+(238,'https://codeforces.com/contest/61/problem/E','Enemy is weak'),
+(239,'https://atcoder.jp/contests/abc343/tasks/abc343_f','Second Largest Query'),
+(240,'https://www.spoj.com/problems/KQUERY/','KQUERY - K-query'),
+(241,'https://codeforces.com/problemset/problem/1234/D','Distinct Characters Queries'),
+(242,'https://codeforces.com/contest/380/problem/C','Sereja and Brackets'),
+(243,'https://codeforces.com/contest/474/problem/F','Ant colony'),
+
+-- Disjoint Set Union (DSU)
+(244,'https://judge.yosupo.jp/problem/unionfind','Unionfind'),
+(245,'https://cses.fi/problemset/task/1676','Road Construction'),
+(246,'https://codeforces.com/edu/course/2/lesson/7/1/practice/contest/289390/problem/D','Cutting a graph'),
+(247,'https://www.codechef.com/problems/ABROADS','Ancient Berland Roads'),
+(248,'https://codeforces.com/edu/course/2/lesson/7/1/practice/contest/289390/problem/C','Experience'),
+
+-- Ordered Set
+(249,'https://www.spoj.com/problems/ORDERSET/en/','Order statistic set'),
+(250,'https://www.spoj.com/problems/MEANARR/','Mean of Array'),
+(251,'https://www.spoj.com/problems/KOILINE/','Line up'),
+(252,'https://codeforces.com/contest/1042/problem/D','Petya and Array'),
+(253,'https://www.spoj.com/problems/INVCNT/en/','Inversion Count'),
+(254,'https://cses.fi/problemset/task/2163','Josephus Problem II'),
+
+-- Trie
+(255,'https://www.spoj.com/problems/ADAINDEX/','Ada and Indexing'),
+(256,'https://www.spoj.com/problems/TRYCOMP/','Try to complete'),
+(257,'https://atcoder.jp/contests/abc287/tasks/abc287_e','Karuta'),
+(258,'https://www.codechef.com/problems/NPLFLF','Query on Strings'),
+(259,'https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=3950','Shortest Names'),
+
+-- Knapsack DP
+(260,'https://cses.fi/problemset/task/1633','Dice Combinations'),
+(261,'https://cses.fi/problemset/task/1635','Coin Combinations'),
+(262,'https://atcoder.jp/contests/dp/tasks/dp_a','Frog 1'),
+(263,'https://atcoder.jp/contests/dp/tasks/dp_b','Frog 2'),
+(264,'https://cses.fi/problemset/task/1634','Minimizing Coins'),
+(265,'https://cses.fi/problemset/task/1637','Removing Digits'),
+(266,'https://codeforces.com/contest/687/problem/C','The Values You Can Make'),
+(267,'https://cses.fi/problemset/task/1638','Grid Paths I'),
+(268,'https://codeforces.com/contest/577/problem/B','Modulo Sum'),
+(269,'https://cses.fi/problemset/task/1745','Money Sums'),
+(270,'https://codeforces.com/gym/105925/problem/F','Feynman Memorizing Numbers'),
+
+-- Digit Dp
+(271,'https://cses.fi/problemset/task/2220','Counting Numbers'),
+(272,'https://vjudge.net/problem/LightOJ-1068/origin','Investigation'),
+(273,'https://atcoder.jp/contests/dp/tasks/dp_s','Digit Sum'),
+(274,'https://codeforces.com/gym/100886/problem/G','Maximum Product'),
+(275,'https://codeforces.com/contest/628/problem/D','Magic Numbers'),
+(276,'https://lightoj.com/problem/digit-count','Digit Count'),
+(277,'https://www.spoj.com/problems/CPCRC1C/','Sum of Digits'),
+(278,'https://www.spoj.com/problems/RAONE/','Ra One Numbers'),
+(279,'https://www.spoj.com/problems/LUCIFER/','Lucifer Numbers'),
+(280,'https://codeforces.com/problemset/problem/204/A','Little Elephant and Interval'),
+
+-- Bitmask Dp
+(281,'https://atcoder.jp/contests/dp/tasks/dp_o','Matching'),
+(282,'https://cses.fi/problemset/task/1690','Hamiltonian Flights'),
+(283,'https://www.spoj.com/problems/PESADA04/en/','Travelling Salesman Problem'),
+(284,'https://codeforces.com/contest/11/problem/D','A Simple Task'),
+(285,'https://codeforces.com/contest/1316/problem/E','Team Building'),
+(286,'https://usaco.org/index.php?page=viewproblem2&cpid=494','Guard Mark'),
+(287,'https://usaco.org/index.php?page=viewproblem2&cpid=515','Moovie Mooving'),
+(288,'https://codeforces.com/problemset/problem/8/C','Looking for Order'),
+(289,'https://codeforces.com/contest/678/problem/E','Another Sith Tournament'),
+(290,'https://cses.fi/problemset/task/1653','Elevator Rides'),
+
+-- Sum Over Subset Dp
+(291,'https://cses.fi/problemset/task/1654','SOS Bit Problem'),
+(292,'https://codeforces.com/contest/165/problem/E','Compatible Numbers'),
+(293,'https://codeforces.com/contest/383/problem/E','Vowels'),
+(294,'https://cses.fi/problemset/task/3141/','And Subset Count'),
+(295,'https://codeforces.com/contest/449/problem/D','Jzzhu and Numbers'),
+(296,'https://atcoder.jp/contests/abc187/tasks/abc187_f','Close Group'),
+(297,'https://www.hackerrank.com/contests/w16/challenges/vim-war/problem','Vim War'),
+(298,'https://www.codechef.com/LTIME50/problems/MAXOR','Good Pairs'),
+(299,'https://www.codechef.com/COOK126A/problems/ANDPREF','Prefix And'),
+(300,'https://www.codechef.com/problems/MONSTER','Killing Monsters'),
+
+-- Open and Close Trick
+(301,'https://codeforces.com/contest/626/problem/F','Group Projects'),
+(302,'https://cses.fi/problemset/task/1665','Coding Company'),
+(303,'https://codeforces.com/contest/466/problem/D','Increase Sequence'),
+(304,'https://codeforces.com/contest/367/problem/E','Sereja and Intervals'),
+(305,'https://atcoder.jp/contests/abc452/tasks/abc452_d','No-Subsequence Substring'),
+
+-- Longest Increasing Subsequence (LIS)
+(306,'https://leetcode.com/problems/longest-increasing-subsequence/description/','Longest Increasing Subsequence (LIS)'),
+(307,'https://cses.fi/problemset/task/1145','Increasing Subsequence'),
+(308,'https://atcoder.jp/contests/dp/tasks/dp_q','Flowers'),
+(309,'https://www.spoj.com/problems/DOSA/','Dosa'),
+(310,'https://www.spoj.com/problems/HMLIS/','HowManyLis'),
+(311,'https://www.spoj.com/problems/ONEXLIS/','One X LIS'),
+(312,'https://atcoder.jp/contests/abc237/tasks/abc237_f','|LIS| = 3'),
+(313,'https://www.spoj.com/problems/NDS/','Increasing Numbers'),
+(314,'https://atcoder.jp/contests/arc091/tasks/arc091_c','LISDL'),
+(315,'https://atcoder.jp/contests/abc165/tasks/abc165_f','LIS on Tree'),
+(316,'https://codeforces.com/problemset/problem/486/E','LIS of Sequence'),
+
+-- Interval Dp
+(317,'https://vjudge.net/problem/Aizu-ALDS1_10_B','Matrix Chain Multiplication'),
+(318,'https://www.spoj.com/problems/MIXTURES/','Mixtures'),
+(319,'https://codeforces.com/contest/245/problem/H','Queries for Number of Palindromes'),
+(320,'https://atcoder.jp/contests/dp/tasks/dp_n','Slimes'),
+(321,'https://cses.fi/problemset/task/1080','Empty String'),
+(322,'https://codeforces.com/problemset/problem/607/B','Zuma'),
+(323,'https://codeforces.com/problemset/problem/607/B','Array Shrinking'),
+
+-- Edit Distance
+(324,'https://cses.fi/problemset/task/1639','Edit Distance'),
+(325,'https://codeforces.com/gym/102001/problem/A','Edit Distance'),
+(326,'https://codeforces.com/problemset/problem/530/G','Levenshtein distance'),
+(327,'https://onlinejudge.org/index.php?option=onlinejudge&Itemid=8&page=show_problem&problem=4600','Back to Edit Distance'),
+(328,'https://codeforces.com/problemset/problem/1282/D','Enchanted Artifact');
