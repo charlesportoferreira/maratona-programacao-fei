@@ -7,6 +7,11 @@
 	border-radius: 20px;
 }
 
+.linha{
+	display: flex;
+	justify-content: space-between;
+}
+
 .grupo{
 	display: flex;
 	flex-direction: column;
@@ -15,12 +20,6 @@
 	border-radius: 10px;
 	padding: 5px;
 }
-
-.linha{
-	display: flex;
-	justify-content: space-between;
-}
-
 
 .grupo .topico{
 	cursor: initial;
@@ -109,8 +108,10 @@
 .right{
 	width:33%;
 	text-align: right;
-
 }
+
+/* Editorial */
+
 .descricao{
 	width:auto;
 	border-radius: 10px;
@@ -126,6 +127,8 @@
 	border-radius: 5px;
 	background: #bbbbcc;
 }
+
+/* Cadastro e Login */
 
 .auth{
 	display: flex;
@@ -162,6 +165,8 @@
 	cursor:pointer;
 }
 
+/* Usuario */
+
 #container h1{
 	padding-left: 50px;
 }
@@ -185,11 +190,6 @@
 	margin: 0px;
 	padding: 10px;
 }
-
-/* #user_statistics{ */
-/* 	margin:10px; */
-/* 	background: '#eeeeff'; */
-/* } */
 
 #profile #user_statistics{
 	position:relative;
@@ -252,3 +252,40 @@
 	outline: 1px solid #1190b4;
 	z-index:10;
 }
+
+/* Contato */
+.container2{
+	display: flex;
+	padding: 10px;
+	margin: 40px;
+	background: #114064;
+	border-radius: 20px;
+	flex-direction: row;
+}
+
+.contatos{
+	padding: 10px;
+}
+
+.contato{
+	text-align: center;
+}
+
+.contato h2{
+	width: auto;
+}
+.contato img{
+	width: 200px;
+	height: auto;
+}
+
+.coluna{
+	flex:1;
+	display: flex;
+	flex-direction: column;
+}
+
+.info .descricao{
+	margin: 10px;
+}
+
