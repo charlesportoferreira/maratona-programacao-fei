@@ -1,5 +1,8 @@
 insert into topicos
 values
+-- Competicao Interna
+(30,'Competicao 1', 0, 'Primeira competiccao Interna. Problemas de logica'),
+
 -- Basicos
 (1,'Entrada e Saida', 1, 'Introdução aos operadores basicos de input e output'),
 (2,'Estruturas de Condições', 1, 'Introdução às estruturas de condições if e else'),

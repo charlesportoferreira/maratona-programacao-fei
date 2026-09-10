@@ -289,3 +289,7 @@
 	margin: 10px;
 }
 
+.info .descricao li{
+	list-style: none;
+}
+

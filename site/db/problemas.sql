@@ -382,4 +382,20 @@ values
 (325,'https://codeforces.com/gym/102001/problem/A','Edit Distance'),
 (326,'https://codeforces.com/problemset/problem/530/G','Levenshtein distance'),
 (327,'https://onlinejudge.org/index.php?option=onlinejudge&Itemid=8&page=show_problem&problem=4600','Back to Edit Distance'),
-(328,'https://codeforces.com/problemset/problem/1282/D','Enchanted Artifact');
+(328,'https://codeforces.com/problemset/problem/1282/D','Enchanted Artifact'),
+
+-- Competicao Interna 1
+(329,'https://judge.beecrowd.com/pt/problems/view/1933','Tri-du'),
+(330,'https://judge.beecrowd.com/pt/problems/view/1715','Handebol'),
+(331,'https://judge.beecrowd.com/pt/problems/view/1708','Volta'),
+(332,'https://judge.beecrowd.com/pt/problems/view/1936','Fatorial'),
+(333,'https://judge.beecrowd.com/pt/problems/view/2879','Desvendando Monty Hall'),
+(334,'https://judge.beecrowd.com/pt/problems/view/2235','Andando no Tempo'),
+(335,'https://judge.beecrowd.com/pt/problems/view/2963','Bobo da Corte'),
+-- 145 huaauhahhuahau
+(336,'https://judge.beecrowd.com/pt/problems/view/1467','Zerinho ou Um'),
+(337,'https://judge.beecrowd.com/pt/problems/view/2662','Escala Musical'),
+(338,'https://judge.beecrowd.com/pt/problems/view/2667','Jogo de Boca'),
+(339,'https://judge.beecrowd.com/pt/problems/view/1940','Jogo da Estratégia'),
+(340,'https://judge.beecrowd.com/pt/problems/view/2663','Fase'),
+(341,'https://judge.beecrowd.com/pt/problems/view/1471','Mergulho');
