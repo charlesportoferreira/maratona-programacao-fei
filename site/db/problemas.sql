@@ -48,7 +48,6 @@ values
 (43,'https://judge.beecrowd.com/pt/problems/view/1067','Números Ímpares'),
 (44,'https://judge.beecrowd.com/pt/problems/view/1070','Seis Números Ímpares'),
 (45,'https://judge.beecrowd.com/pt/problems/view/1071','Soma de Impares Consecutivos I'),
-(46,'https://judge.beecrowd.com/pt/problems/view/1072','Intervalo 2'),
 
 -- laços de repetição
 (47,'https://judge.beecrowd.com/pt/problems/view/1064','Positivos e Média'),
@@ -258,10 +257,6 @@ values
 -- DFS
 (230,'https://cses.fi/problemset/task/1666','Building Roads'),
 
--- Knapsack
-(231,'https://cses.fi/problemset/task/1633','Dice Combinations'),
-(232,'https://cses.fi/problemset/task/1635','Coin Combinations I'),
-
 -- Binary Search
 (233,'https://codeforces.com/edu/course/2/lesson/6/1/practice/contest/283911/problem/A','Binary Search'),
 (234,'https://codeforces.com/edu/course/2/lesson/6/1/practice/contest/283911/problem/B','Closest to the Left'),
@@ -374,8 +369,8 @@ values
 (319,'https://codeforces.com/contest/245/problem/H','Queries for Number of Palindromes'),
 (320,'https://atcoder.jp/contests/dp/tasks/dp_n','Slimes'),
 (321,'https://cses.fi/problemset/task/1080','Empty String'),
-(322,'https://codeforces.com/problemset/problem/607/B','Zuma'),
-(323,'https://codeforces.com/problemset/problem/607/B','Array Shrinking'),
+(322,'https://codeforces.com/problemset/problem/607/B' ,'Zuma'),
+(323,'https://codeforces.com/contest/1312/problem/E','Array Shrinking'),
 
 -- Edit Distance
 (324,'https://cses.fi/problemset/task/1639','Edit Distance'),
@@ -399,3 +394,5 @@ values
 (339,'https://judge.beecrowd.com/pt/problems/view/1940','Jogo da Estratégia'),
 (340,'https://judge.beecrowd.com/pt/problems/view/2663','Fase'),
 (341,'https://judge.beecrowd.com/pt/problems/view/1471','Mergulho');
+
+

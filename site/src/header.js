@@ -3,7 +3,7 @@
 // .classList();
 
 const header = document.getElementById("header");
-const left_tags = ['ranking','links','contato'];
+const left_tags = ['ranking','links','contato','ajuda'];
 const logout_tags = ['login','sign up'];
 const PATH = '/maratona-programacao-fei/site'
 const header_files = {
@@ -11,6 +11,7 @@ const header_files = {
 	'links':`${PATH}/views/links.html`,
 	'contato':`${PATH}/views/contato.html`,
 	'ranking':`${PATH}/views/ranking.html`,
+	'ajuda':`${PATH}/views/ajuda.html`,
 	'login':`${PATH}/views/login.html`,
 	'sign up':`${PATH}/views/cadastro.html`,
 	'user':`${PATH}/views/usuario.html`,

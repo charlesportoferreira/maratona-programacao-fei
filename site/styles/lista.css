@@ -110,6 +110,11 @@
 	text-align: right;
 }
 
+.descricao .link{
+	color: blue;
+  text-decoration: underline solid blue 1px;
+}
+
 /* Editorial */
 
 .descricao{
@@ -120,6 +125,7 @@
 	background: #eeeeff;
 	color: black;
 	font-size: 13pt;
+	overflow: hidden;
 }
 
 .descricao pre:has(code){

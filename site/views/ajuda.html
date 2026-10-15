@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Home</title>
+	<link href="../styles/header.css" rel="stylesheet">
+	<link href="../styles/lista.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+	<div id="header"></div>
+	
+	<div id='container'>
+		<h2> Perguntas Frequentes </h2>
+		<div class="grupo clickable">
+			<input class="toggle" id="toggle_grupo_0" type="checkbox" onclick="window.dispatchEvent(new CustomEvent('layoutReady'))"> 
+			<label class="linha clickable" for="toggle_grupo_0">
+				<label for="toggle_grupo_0" class="clickable">1. Como se inscrever no Projeto?</label>
+				<label class="arrow clickable" for="toggle_grupo_0">&lt;</label>
+			</label>
+
+			<div class="topico">
+				<div class='descricao'>
+					<h3> 1. Entre no portal do aluno </h3>
+					<a href='https://interage.fei.org.br/secureserver/portal/graduacao/home' target='_blank' class='link'>
+						Portal do Aluno
+					</a> 
+					<h3> 2. Entre na pagina de monitoria, no topico de Sala dos professores </h3>
+					<img src='../images/inscricao01.png'/>
+					<h3> 3. Escolha o projeto da maratona e inicie a inscrição </h3>
+					<img src='../images/inscricao02.png'/>
+				</div>
+			</div>
+		</div>
+
+		<div class="grupo clickable">
+			<input class="toggle" id="toggle_grupo_1" type="checkbox" onclick="window.dispatchEvent(new CustomEvent('layoutReady'))">
+			<label class="linha clickable" for="toggle_grupo_1">
+				<label for="toggle_grupo_1" class="clickable">2. Como marcar as horas extras?</label>
+				<label class="arrow clickable" for="toggle_grupo_1">&lt;</label>
+			</label>
+
+			<div class="topico">
+				<div class='descricao'>
+					<h2> 1. Entre no portal do aluno </h2>
+					<a href='https://interage.fei.org.br/secureserver/portal/graduacao/home' target='_blank' class='link'>
+						Portal do Aluno
+					</a> 
+					<h2> 2. Entre na pagina de monitor, no topico de RH</h2>
+					<img src='../images/horas_extra01.png'/>
+					<h2> 3. Selecione o projeto da maratona que você está inscrito e clique para apontar horas </h2>
+					<img src='../images/horas_extra02.png'/>
+					<h2> 4. Clique em iniciar atividade, para marcar o horario de inicio do dia </h2>
+					<img src='../images/horas_extra03.png'/>
+					<h2> 5. Clique em Encerrar atividade, para marcar o horario de saida do dia na maratona</h2>
+					<p>
+					É necessario colocar uma descrição do que foi feito no dia para encerrar a atividade, este campo pode ser preenchido com "maratona"
+					</p>
+					<img src='../images/horas_extra04.png'/>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="./../src/session.js" type="text/javascript"></script>
+	<script src="./../src/header.js" type="text/javascript"></script>
+	<script src="./../src/fundo.js" type="text/javascript"></script>
+</body>
+</html>
