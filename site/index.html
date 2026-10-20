@@ -9,9 +9,65 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
-    <div id="header"></div>
+	<div id="header"></div>
 	
-	<div id='container'></div>
+	<div id='container'>
+
+		<div class="grupo clickable">
+			<input class="toggle" id="toggle_grupo_-1" type="checkbox" onclick="window.dispatchEvent(new CustomEvent('layoutReady'))" checked> 
+			<label class="linha clickable" for="toggle_grupo_-1">
+				<label for="toggle_grupo_-1" class="clickable">Avisos</label>
+				<label class="arrow clickable" for="toggle_grupo_-1">&lt;</label>
+			</label>
+
+			<div class='topico'>
+				<div class='descricao'>
+					<h2> Sede de SBC</h2>
+					<div class='linha'>
+						<div class='left'>
+							<p>
+							A segunda competição interna ocorrerá no dia 29 de Outubro (quinta feira).<br>
+							(Individual ou Dupla) <br>
+							Horario: 14:00 às 16:00 <br>
+							Sala K409 
+							</p>
+							<p>
+							Link de Inscrição:
+							<a class="link" href='https://forms.gle/wnPhiqBJQdmRjvus7' target='_blank'>
+								https://forms.gle/wnPhiqBJQdmRjvus7
+							</a>
+							</p> 
+						</div>
+						<div class='center'>
+							<img src="./images/qrcode_competicao_sbc.png" width=200>
+						</div>
+					</div>
+				
+					<h2> Sede de São Paulo </h2>
+					<div class='linha'>
+						<div class='left'>
+							<p>
+							A primeira competição interna ocorrerá no dia 30 de Outubro (sexta feira).<br>
+							(Individual ou Dupla) <br>
+							Horario: 10:00 às 12:00 <br>
+							Sala B220 
+							</p>
+							<p>
+							Link de Inscrição:
+							<a class="link" href='https://forms.gle/3t1wE9rg5cMSTWqM9' target='_blank'>
+								https://forms.gle/3t1wE9rg5cMSTWqM9
+							</a>
+							</p> 
+						</div>
+						<div class='center'>
+							<img src="./images/qrcode_competicao_sp.png" width=200>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
 
     <script src="./src/session.js" type="text/javascript"></script>
 	<script src="./src/lista.js" type="text/javascript"></script>
