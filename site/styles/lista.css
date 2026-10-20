@@ -12,6 +12,12 @@
 	justify-content: space-between;
 }
 
+.linha2{
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
 .grupo{
 	display: flex;
 	flex-direction: column;
@@ -118,7 +124,7 @@
 /* Editorial */
 
 .descricao{
-	width:auto;
+	width:100%;
 	border-radius: 10px;
 	margin: 0px;
 	padding: 10px;
@@ -270,7 +276,7 @@
 }
 
 .contatos{
-	padding: 10px;
+	flex:1;
 }
 
 .contato{
@@ -286,10 +292,11 @@
 }
 
 .coluna{
-	flex:1;
+	flex:2;
 	display: flex;
 	flex-direction: column;
 }
+
 
 .info .descricao{
 	margin: 10px;
