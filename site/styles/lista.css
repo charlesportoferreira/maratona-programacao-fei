@@ -204,10 +204,6 @@
 }
 
 #profile #user_statistics{
-	position:relative;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
 	margin:10px;
 	background-color: #eeeeff;
 	width:500px;

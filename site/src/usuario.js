@@ -39,10 +39,6 @@ async function getData() {
 			.eq('uid',uid)
 			.order('gid');
 
-		const user_statistics = document.createElement("canvas");
-		user_statistics.id = 'user_statistics';
-		const utx = user_statistics.getContext('2d');
-
 		const problemas_resolvidos = document.createElement("div");
 		problemas_resolvidos.classList.add('status');
 		{ // Problemas Resolvidos
@@ -79,59 +75,47 @@ async function getData() {
 		profile.appendChild(topicos_resolvidos);
 
 		{ // Grafico
-			const grafico = document.createElement("div");
-			grafico.id = 'user_statistics';
-			const altura_grafico = 230;
-			for( stat of estatisticas ){
-				const barra_wrap = document.createElement('div');
-				barra_wrap.id = 'barra_wrap';
-				barra_wrap.height = 200;
-				barra_wrap.width = 100;
-				const barra = document.createElement("div");
-				barra.classList.add('barra');
-				barra.style.height = `${altura_grafico * (stat.solved_problems / stat.total_problemas)}px`;
-				
-				console.log(barra.style.height);
-
-				{
-					const popup = document.createElement("div");
-					popup.classList.add('popup');
-					const title = document.createElement("span");
-					title.innerText = stat.nome;
-					const proportion = document.createElement("span");
-					proportion.innerText = ` ${(stat.solved_problems / stat.total_problemas * 100).toFixed(2)}%`;
-
-					popup.appendChild(title);
-					popup.appendChild(proportion);
-					barra.appendChild(popup);
+			const user_statistics = document.createElement("canvas");
+			const wrap_grafico = document.createElement("div");
+			wrap_grafico.id = 'user_statistics';
+			const utx = user_statistics.getContext('2d');
+			const grupos = new Set();
+			const topicos = [];
+			for(const stat of estatisticas){
+				grupos.add(stat.nome);
+				const topico = {
+					label: stat.topico,
+					data: []
 				}
-				const title = document.createElement('div');
-				title.classList.add('nome');
-				title.innerText = stat.nome;
-
-				barra_wrap.appendChild(barra);
-				barra_wrap.appendChild(title);
-				grafico.appendChild(barra_wrap);
+				for(const g of grupos){
+					if( g == stat.nome ) topico.data.push(stat.solved_problems);
+					else topico.data.push(0);
+				}
+				topicos.push(topico);
 			}
-			profile.appendChild(grafico);
-			// for( let i = 0; i < estatisticas.length; i++){
-			// 	const altura = altura_max_barras * (estatisticas[i].solved_problems / estatisticas[i].total_problemas);
-			// 	retangulo( (1 + 2*i)*tamanho, altura_min_barras + altura_max_barras - altura, tamanho, altura, '#1090b4');
+			console.log(grupos);
+			console.log(topicos);
 
-			// 	let titulo = estatisticas[i].nome.split(' ');
-			// 	offset_titulo = 25;
-			// 	for( let j of titulo){
-			// 		texto( (1 + 2*i)*tamanho, altura_canvas - offset_titulo, j, '7pt', 'black');
-			// 		offset_titulo -= 10;
-			// 	}
-			// }
-
-			// utx.beginPath();
-			// utx.moveTo(0,altura_min_barras + altura_max_barras);
-			// utx.lineTo(largura_canvas,altura_min_barras + altura_max_barras);
-			// utx.stroke();
-			// utx.closePath();
-			// profile.appendChild(user_statistics);
+			const grafico = new Chart(utx,{
+				type: 'bar',
+				data: {
+					labels: [...grupos],
+					datasets: topicos,
+				},
+				options: {
+					responsive: true,
+					plugins:{
+						legend:{ display: false },
+						colors:{ forceOverride: true }
+					},
+					scales: {
+						x: { stacked: true, },
+						y: { stacked: true, }
+					},
+				}
+			});
+			wrap_grafico.appendChild(user_statistics);
+			profile.appendChild(wrap_grafico);
 		}
 
 	}
