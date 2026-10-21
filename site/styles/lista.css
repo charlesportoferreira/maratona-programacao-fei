@@ -116,15 +116,10 @@
 	text-align: right;
 }
 
-.descricao .link{
-	color: blue;
-  text-decoration: underline solid blue 1px;
-}
-
 /* Editorial */
 
 .descricao{
-	width:100%;
+	flex:1;
 	border-radius: 10px;
 	margin: 0px;
 	padding: 10px;
@@ -138,6 +133,11 @@
 	padding: 5px;
 	border-radius: 5px;
 	background: #bbbbcc;
+}
+
+.descricao .link{
+	color: blue;
+  text-decoration: underline solid blue 1px;
 }
 
 /* Cadastro e Login */
@@ -266,18 +266,6 @@
 }
 
 /* Contato */
-.container2{
-	display: flex;
-	padding: 10px;
-	margin: 40px;
-	background: #114064;
-	border-radius: 20px;
-	flex-direction: row;
-}
-
-.contatos{
-	flex:1;
-}
 
 .contato{
 	text-align: center;
@@ -292,13 +280,17 @@
 }
 
 .coluna{
-	flex:2;
+	flex:4;
 	display: flex;
 	flex-direction: column;
 }
 
+.coluna:has(.contato){
+	flex:1;
+}
 
 .info .descricao{
+	width: auto;
 	margin: 10px;
 }
 
