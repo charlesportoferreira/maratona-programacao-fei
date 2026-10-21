@@ -42,14 +42,15 @@ async function getData() {
 		const problemas_resolvidos = document.createElement("div");
 		problemas_resolvidos.classList.add('status');
 		{ // Problemas Resolvidos
-			let total_resolvido = 0;
-			for(let stat of estatisticas)
-				total_resolvido += stat.solved_problems;
+			const { data:ranking, err } = await db.from('ranking')
+				.select('*')
+				.eq('uid',uid)
+				.single();
 			const resolvidos_text1 = document.createElement("h3");
 			resolvidos_text1.innerText = "Problemas Resolvidos:";
 
 			const resolvidos_text2 = document.createElement("h3");
-			resolvidos_text2.innerText = `${total_resolvido}`;
+			resolvidos_text2.innerText = `${ranking.problemas_resolvidos}`;
 
 			problemas_resolvidos.appendChild(resolvidos_text1);
 			problemas_resolvidos.appendChild(resolvidos_text2);
