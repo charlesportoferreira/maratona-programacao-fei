@@ -35,12 +35,14 @@ const left = document.createElement("div");
 left.id = "left";
 header.appendChild(left);
 
-for(let i = 0; i < left_tags.length; i++){
-	const button = document.createElement("a");
-	button.id = `header_${left_tags[i]}`;
-	button.href = header_files[left_tags[i]];
-	button.textContent = left_tags[i];
-	left.appendChild(button);
+function left_buttons(){
+	for(let i = 0; i < left_tags.length; i++){
+		const button = document.createElement("a");
+		button.id = `header_${left_tags[i]}`;
+		button.href = header_files[left_tags[i]];
+		button.textContent = left_tags[i];
+		left.appendChild(button);
+	}
 }
 
 const titulo = document.getElementById("titulo");
@@ -52,6 +54,8 @@ db.auth.onAuthStateChange((event,session) => {
 	if(session){
 		console.log("logado header");
 
+		left.replaceChildren();
+		left_buttons();
 		if( session.user.user_metadata.super_admin ){
 			for(let i = 0; i < admin_left_tags.length; i++){
 				const button = document.createElement("a");
