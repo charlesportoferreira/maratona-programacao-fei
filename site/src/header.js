@@ -51,11 +51,12 @@ const right = document.createElement("div");
 right.id = "right";
 header.appendChild(right);
 db.auth.onAuthStateChange((event,session) => {
+	left.replaceChildren();
+	left_buttons();
+	home_button();
 	if(session){
 		console.log("logado header");
 
-		left.replaceChildren();
-		left_buttons();
 		if( session.user.user_metadata.super_admin ){
 			for(let i = 0; i < admin_left_tags.length; i++){
 				const button = document.createElement("a");
@@ -91,177 +92,155 @@ db.auth.onAuthStateChange((event,session) => {
 	}
 });
 
-const canvas = document.createElement("canvas");
-canvas.id = 'logo';
-left.prepend(canvas);
-canvas.setAttribute("onclick","home()");
-const ltx = canvas.getContext('2d');
+function home_button(){
+	const canvas = document.createElement("canvas");
+	canvas.id = 'logo';
+	left.prepend(canvas);
+	canvas.setAttribute("onclick","home()");
+	const ltx = canvas.getContext('2d');
 
-const offsetx = 5;
-const offsety = 4;
-// const offsety = 1;
-canvas.width = 215;
-// canvas.width = 350;
-// canvas.width = 500;
-// canvas.width = document.body.offsetWidth;
-canvas.height = 79;
-// canvas.height = 100;
-let tamanho_logo = 7;
-let colunas_logo = Math.ceil(canvas.height / tamanho_logo );
-let linhas_logo = Math.ceil(canvas.width / tamanho_logo );
-let visitados_logo = Array.from({length: linhas_logo},()=>Array(colunas_logo).fill(0));
-const fill = 0.45;
+	const offsetx = 5;
+	const offsety = 4;
+	// const offsety = 1;
+	canvas.width = 215;
+	// canvas.width = 350;
+	// canvas.width = 500;
+	// canvas.width = document.body.offsetWidth;
+	canvas.height = 79;
+	// canvas.height = 100;
+	let tamanho_logo = 7;
+	let colunas_logo = Math.ceil(canvas.height / tamanho_logo );
+	let linhas_logo = Math.ceil(canvas.width / tamanho_logo );
+	let visitados_logo = Array.from({length: linhas_logo},()=>Array(colunas_logo).fill(0));
+	const fill = 0.45;
 
-const logo = [
-'#####...#####...#####...',
-'#.......#.........#.....',
-'###.....####......#.....',
-'#.......#.........#.....',
-'#.......#####...#####...'
-];
-
-// const logo = [
-// '#...#....###....####.....###....#####....###....#...#....###....#####...#####...#####...',
-// '##.##...#...#...#...#...#...#.....#.....#...#...##..#...#...#...#.......#.........#.....',
-// '#.#.#...#...#...####....#...#.....#.....#...#...#.#.#...#...#...###.....####......#.....',
-// '#...#...#####...#..#....#####.....#.....#...#...#..##...#####...#.......#.........#.....',
-// '#...#...#...#...#...#...#...#.....#......###....#...#...#...#...#.......#####...#####...'
-// ];
-
-// const logo = [
-// '#...#....###....####.....###....#####....###....#...#....###.',
-// '##.##...#...#...#...#...#...#.....#.....#...#...##..#...#...#',
-// '#.#.#...#...#...####....#...#.....#.....#...#...#.#.#...#...#',
-// '#...#...#####...#..#....#####.....#.....#...#...#..##...#####',
-// '#...#...#...#...#...#...#...#.....#......###....#...#...#...#',
-// '.............................................................',
-// '.............................................................',
-// '.............................................................',
-// '.....................#####...#####...#####...................',
-// '.....................#.......#.........#.....................',
-// '.....................###.....####......#.....................',
-// '.....................#.......#.........#.....................',
-// '.....................#.......#####...#####...................'
-// ];
-
-function dfs_logo(xi,yi,fill){
-	let pilha = [];
-	const direcoes = [
-		[1,0],
-		[-1,0],
-		[0,1],
-		[0,-1]
+	const logo = [
+	'#####...#####...#####...',
+	'#.......#.........#.....',
+	'###.....####......#.....',
+	'#.......#.........#.....',
+	'#.......#####...#####...'
 	];
-	pilha.push([xi,yi]);
-	while(pilha.length > 0){
-		let [x, y] = pilha[pilha.length-1];
-		pilha.pop();
-		if( x < 0 || y < 0 || x >= linhas_logo || y >= colunas_logo ) continue;
-		if( visitados_logo[x][y] > 0 ) continue;;
-		visitados_logo[x][y]++;
+
+	function dfs_logo(xi,yi,fill){
+		let pilha = [];
+		const direcoes = [
+			[1,0],
+			[-1,0],
+			[0,1],
+			[0,-1]
+		];
+		pilha.push([xi,yi]);
+		while(pilha.length > 0){
+			let [x, y] = pilha[pilha.length-1];
+			pilha.pop();
+			if( x < 0 || y < 0 || x >= linhas_logo || y >= colunas_logo ) continue;
+			if( visitados_logo[x][y] > 0 ) continue;;
+			visitados_logo[x][y]++;
 
 
-		for(let [dx, dy] of direcoes){
-			let nx = x + dx;
-			let ny = y + dy;
-			let yes = Math.random();
-			if(yes > fill) continue;
-			if( nx < 0 || ny < 0 || nx >= linhas_logo || ny >= colunas_logo ) continue;
-			if(visitados_logo[nx][ny] != 0) continue;
-			ltx.moveTo(x*tamanho_logo,y*tamanho_logo);
-			ltx.lineTo(nx*tamanho_logo,ny*tamanho_logo);
-			pilha.push([nx,ny]);
-		}
-	}
-}
-
-
-function draw_border(){
-	const direcoes = [
-		[1,0], [-1,0], [0,1], [0,-1]
-	];
-	const diagonais = [
-		[1,1], [1,-1], [-1,1], [-1,-1]
-	];
-	for(let i = 0; i < linhas_logo; i++){
-		for(let j = 0; j < colunas_logo; j++){
-			if(visitados_logo[i][j] == 1) continue;
-			visitados_logo[i][j] == 1;
-
-			let borda = false;
-			for(let [x,y] of direcoes){
-				let nx = i + x;
-				let ny = j + y;
+			for(let [dx, dy] of direcoes){
+				let nx = x + dx;
+				let ny = y + dy;
+				let yes = Math.random();
+				if(yes > fill) continue;
 				if( nx < 0 || ny < 0 || nx >= linhas_logo || ny >= colunas_logo ) continue;
-				if(visitados_logo[nx][ny] == 1){
-					borda = true;
-					break;
-				}
-			}
-			for(let [x,y] of diagonais){
-				let nx = i + x;
-				let ny = j + y;
-				if( nx < 0 || ny < 0 || nx >= linhas_logo || ny >= colunas_logo ) continue;
-				if(visitados_logo[nx][ny] == 1){
-					borda = true;
-					break;
-				}
-			}
-			if( !borda ) continue;
-
-			for(let [x,y] of direcoes){
-				let nx = i + x;
-				let ny = j + y;
-				if( nx < 0 || ny < 0 || nx >= linhas_logo || ny >= colunas_logo ) continue;
-				if(visitados_logo[nx][ny]) continue;
-				let borda2 = false;
-				for(let [dx,dy] of direcoes){
-					let nnx = nx + dx;
-					let nny = ny + dy;
-					if( nnx < 0 || nny < 0 || nnx >= linhas_logo || nny >= colunas_logo ) continue;
-					if(visitados_logo[nnx][nny]){
-						borda2 = true;
-						break;
-					}
-				}
-				for(let [dx,dy] of diagonais){
-					let nnx = nx + dx;
-					let nny = ny + dy;
-					if( nnx < 0 || nny < 0 || nnx >= linhas_logo || nny >= colunas_logo ) continue;
-					if(visitados_logo[nnx][nny]){
-						borda2 = true;
-						break;
-					}
-				}
-				if( !borda2 ) continue;
-
-				ltx.moveTo(i*tamanho_logo,j*tamanho_logo);
+				if(visitados_logo[nx][ny] != 0) continue;
+				ltx.moveTo(x*tamanho_logo,y*tamanho_logo);
 				ltx.lineTo(nx*tamanho_logo,ny*tamanho_logo);
+				pilha.push([nx,ny]);
 			}
-
-		}
-	}
-}
-
-function draw_logo(){
-	for(let i = 0; i < logo.length; i++){
-		for(let j = 0; j < logo[i].length; j++){
-			if(logo[i][j] == '#') visitados_logo[j + offsetx][i+offsety] = 1;
 		}
 	}
 
-	ltx.beginPath();
-	ltx.strokeStyle = '#eeeeff';
-	ltx.lineWidth = 2;
-	draw_border();
-	ltx.stroke();
 
-	ltx.beginPath();
-	ltx.strokeStyle = '#eeeeff';
-	ltx.lineWidth = 1;
-	for(let i = 0; i < linhas_logo; i++)
-		for(let j = 0; j < colunas_logo; j++)
-			if( !visitados_logo[i][j]) dfs_logo(i,j,fill);
-	ltx.stroke();
+	function draw_border(){
+		const direcoes = [
+			[1,0], [-1,0], [0,1], [0,-1]
+		];
+		const diagonais = [
+			[1,1], [1,-1], [-1,1], [-1,-1]
+		];
+		for(let i = 0; i < linhas_logo; i++){
+			for(let j = 0; j < colunas_logo; j++){
+				if(visitados_logo[i][j] == 1) continue;
+				visitados_logo[i][j] == 1;
+
+				let borda = false;
+				for(let [x,y] of direcoes){
+					let nx = i + x;
+					let ny = j + y;
+					if( nx < 0 || ny < 0 || nx >= linhas_logo || ny >= colunas_logo ) continue;
+					if(visitados_logo[nx][ny] == 1){
+						borda = true;
+						break;
+					}
+				}
+				for(let [x,y] of diagonais){
+					let nx = i + x;
+					let ny = j + y;
+					if( nx < 0 || ny < 0 || nx >= linhas_logo || ny >= colunas_logo ) continue;
+					if(visitados_logo[nx][ny] == 1){
+						borda = true;
+						break;
+					}
+				}
+				if( !borda ) continue;
+
+				for(let [x,y] of direcoes){
+					let nx = i + x;
+					let ny = j + y;
+					if( nx < 0 || ny < 0 || nx >= linhas_logo || ny >= colunas_logo ) continue;
+					if(visitados_logo[nx][ny]) continue;
+					let borda2 = false;
+					for(let [dx,dy] of direcoes){
+						let nnx = nx + dx;
+						let nny = ny + dy;
+						if( nnx < 0 || nny < 0 || nnx >= linhas_logo || nny >= colunas_logo ) continue;
+						if(visitados_logo[nnx][nny]){
+							borda2 = true;
+							break;
+						}
+					}
+					for(let [dx,dy] of diagonais){
+						let nnx = nx + dx;
+						let nny = ny + dy;
+						if( nnx < 0 || nny < 0 || nnx >= linhas_logo || nny >= colunas_logo ) continue;
+						if(visitados_logo[nnx][nny]){
+							borda2 = true;
+							break;
+						}
+					}
+					if( !borda2 ) continue;
+
+					ltx.moveTo(i*tamanho_logo,j*tamanho_logo);
+					ltx.lineTo(nx*tamanho_logo,ny*tamanho_logo);
+				}
+
+			}
+		}
+	}
+
+	function draw_logo(){
+		for(let i = 0; i < logo.length; i++){
+			for(let j = 0; j < logo[i].length; j++){
+				if(logo[i][j] == '#') visitados_logo[j + offsetx][i+offsety] = 1;
+			}
+		}
+
+		ltx.beginPath();
+		ltx.strokeStyle = '#eeeeff';
+		ltx.lineWidth = 2;
+		draw_border();
+		ltx.stroke();
+
+		ltx.beginPath();
+		ltx.strokeStyle = '#eeeeff';
+		ltx.lineWidth = 1;
+		for(let i = 0; i < linhas_logo; i++)
+			for(let j = 0; j < colunas_logo; j++)
+				if( !visitados_logo[i][j]) dfs_logo(i,j,fill);
+		ltx.stroke();
+	}
+	draw_logo();
 }
-draw_logo();
