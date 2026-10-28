@@ -18,6 +18,12 @@
 	justify-content: space-around;
 }
 
+.coluna{
+	flex:4;
+	display: flex;
+	flex-direction: column;
+}
+
 .grupo{
 	display: flex;
 	flex-direction: column;
@@ -36,7 +42,7 @@
 	position:absolute;
 	opacity: 0;
 	width: 0;
-	height; 0;
+	height: 0;
 	margin: 0;
 	padding: 0;
 	pointer-events: none;
@@ -153,6 +159,15 @@
 	background: #114064;
 }
 
+.auth .linha span{
+	margin: auto;
+}
+
+.auth #response{
+	margin: 10px;
+	color: yellow;
+}
+
 .auth form{
 	display: flex;
 	flex-direction: column;
@@ -161,6 +176,7 @@
 	margin: 10px;
 	width: 80%;
 }
+
 .auth form button{
 	margin: auto;
 	width: 50%;
@@ -176,6 +192,52 @@
 	background-color: #1190b4;
 	cursor:pointer;
 }
+
+/* adicionar problemas */
+
+.check{
+	position:absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+	margin: 0;
+	padding: 0;
+	pointer-events: none;
+}
+
+#cadastro_topico{
+	background: #eeeeff;
+	color: black;
+	border-radius: 10px;
+	height: 200px;
+	max-height: 200px;
+	overflow-y: scroll;
+	overflow: hide;
+	margin: 10px;
+}
+
+#cadastro_topico .clickable:hover{
+	background: #1090b4;
+	color: white;
+}
+
+#topicos_selecionados{
+	display:flex;
+	flex-direction:row;
+	flex-wrap: wrap;
+}
+
+#topicos_selecionados div{
+	padding-right: 5px;
+	padding-left: 5px;
+	margin: 5px;
+	outline: 2px solid #1090b4;
+	border-radius: 5px;
+}
+#topicos_selecionados label{
+	margin:auto;
+}
+
 
 /* Usuario */
 
@@ -273,12 +335,6 @@
 .contato img{
 	width: 200px;
 	height: auto;
-}
-
-.coluna{
-	flex:4;
-	display: flex;
-	flex-direction: column;
 }
 
 .coluna:has(.contato){

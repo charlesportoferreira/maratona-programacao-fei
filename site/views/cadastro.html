@@ -10,9 +10,9 @@
 	</head>
 	<body>
 		<div id="header"> </div>
-		<div id="titulo"> Sign Up </div>
 
 		<div class="auth">
+			<div id="titulo"> Sign Up </div>
 			<form id='auth_cadastro'>
 				<div class='linha'>
 					<span> Username: </span>
@@ -23,12 +23,17 @@
 					<input type='email' id='cadastro_email' placeholder='email' required>
 				</div>
 				<div class='linha'>
-					<span> Password: </span>
+					<span> Senha: </span>
 					<input type='password' id='cadastro_senha' placeholder='senha' required>
+				</div>
+				<div class='linha'>
+					<span> Confirme: </span>
+					<input type='password' id='cadastro_senha2' placeholder='confirme a senha' required>
 				</div>
 				<button type='button' id='cadastro_button' onclick='cadastro()'> Sign Up </button>
 			</form>
 			<div id='response'></div>
+		</div>
 			
 		</div>
 

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title> Atualizar Lista </title>
+		<link href="../styles/header.css" rel="stylesheet">
+		<link href="../styles/lista.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+	</head>
+	<body>
+		<div id="header"> </div>
+
+
+		<div class="auth">
+			<div id="titulo"> Adicionar Problema </div>
+			<form>
+				<div class='linha'>
+					<span> Nome: </span>
+					<input type='text' id='problema_nome' placeholder='nome' required>
+				</div>
+				<div class='linha'>
+					<span> Link: </span>
+					<input type='link' id='problema_link' placeholder='link' required>
+				</div>
+				<div class='coluna'>
+					<div class='linha'>
+						<span> Topico: </span>
+						<input type='text' id='topico_search' placeholder='Procure o topico'>
+					</div>
+					<div id='topicos_selecionados'> </div>
+					<div id='problema_topico'> </div>
+				</div>
+				<button type='button' id='problema_button' onclick='cadastrar_problema()'> Cadastrar </button>
+			</form>
+			<div id='response'></div>
+		</div>
+
+		<div class="auth">
+			<div id="titulo"> Adicionar Topico </div>
+			<form>
+				<div class='linha'>
+					<span> Nome: </span>
+					<input type='text' id='cadastro_nome' placeholder='nome' required>
+				</div>
+				<div class='linha'>
+					<span> Link: </span>
+					<input type='link' id='cadastro_link' placeholder='link' required>
+				</div>
+				<div class='coluna'>
+					<div class='linha'>
+						<span> Topico: </span>
+						<input type='text' id='topico_search' placeholder='Procure o topico'>
+					</div>
+					<div id='topicos_selecionados'> </div>
+					<div id='cadastro_topico'> </div>
+				</div>
+				<button type='button' id='cadastro_button' onclick='cadastrar_problema()'> Cadastrar </button>
+			</form>
+			<div id='response'></div>
+		</div>
+
+		<script src="./../src/session.js" type="text/javascript"></script>
+		<script src="./../src/header.js" type="text/javascript"></script>
+		<script src="./../src/admin_problemas.js" type="text/javascript"></script>
+		<script src="./../src/fundo.js" type="text/javascript"></script>
+	</body>
+</html>

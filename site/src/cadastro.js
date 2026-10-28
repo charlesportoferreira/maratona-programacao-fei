@@ -2,6 +2,14 @@ async function cadastro(){
 	const name = document.getElementById('cadastro_name').value;
 	const email = document.getElementById('cadastro_email').value;
 	const password = document.getElementById('cadastro_senha').value;
+	const confirm_password = document.getElementById('cadastro_senha2').value;
+
+	const res = document.getElementById('response');
+
+	if( confirm_password != password ){
+		res.innerText = "Senha e senha de confirmação diferentes";
+		return;
+	}
 	const { data, error } = await db.auth.signUp({
 		email: email,
 		password: password,
@@ -12,12 +20,8 @@ async function cadastro(){
 		}
 	});
 	if( error ){
-		console.log( error.message );
+		res.innerText = error.message;
 	} else {
-		// const response = document.createElement('div');
-		// response.innerText = "Check your email for a verification link!";
-		// const res = document.getElementById('response')
-		// res.appendChild(response);
 		window.location.href = `${PATH}/index.html`;
 	}
 }

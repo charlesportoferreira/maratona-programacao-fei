@@ -272,12 +272,6 @@ values
 (242,'https://codeforces.com/contest/380/problem/C','Sereja and Brackets'),
 (243,'https://codeforces.com/contest/474/problem/F','Ant colony'),
 
--- Disjoint Set Union (DSU)
-(244,'https://judge.yosupo.jp/problem/unionfind','Unionfind'),
-(245,'https://cses.fi/problemset/task/1676','Road Construction'),
-(246,'https://codeforces.com/edu/course/2/lesson/7/1/practice/contest/289390/problem/D','Cutting a graph'),
-(247,'https://www.codechef.com/problems/ABROADS','Ancient Berland Roads'),
-(248,'https://codeforces.com/edu/course/2/lesson/7/1/practice/contest/289390/problem/C','Experience'),
 
 -- Ordered Set
 (249,'https://www.spoj.com/problems/ORDERSET/en/','Order statistic set'),
@@ -393,6 +387,33 @@ values
 (338,'https://judge.beecrowd.com/pt/problems/view/2667','Jogo de Boca'),
 (339,'https://judge.beecrowd.com/pt/problems/view/1940','Jogo da Estratégia'),
 (340,'https://judge.beecrowd.com/pt/problems/view/2663','Fase'),
-(341,'https://judge.beecrowd.com/pt/problems/view/1471','Mergulho');
+(341,'https://judge.beecrowd.com/pt/problems/view/1471','Mergulho'),
 
+-- Disjoint Set Union (DSU)
+(244,'https://judge.yosupo.jp/problem/unionfind','Unionfind'),
+(245,'https://cses.fi/problemset/task/1676','Road Construction'),
+(246,'https://codeforces.com/edu/course/2/lesson/7/1/practice/contest/289390/problem/D','Cutting a graph'),
+(247,'https://www.codechef.com/problems/ABROADS','Ancient Berland Roads'),
+(248,'https://codeforces.com/edu/course/2/lesson/7/1/practice/contest/289390/problem/C','Experience'),
 
+-- Monotonic Stack
+(342,'https://cses.fi/problemset/task/1645','Nearest Smaller Values'),
+(343,'https://leetcode.com/problems/next-greater-element-i/description/','Next Greater Element I'),
+(344,'https://atcoder.jp/contests/agc005/tasks/agc005_b','Minimum Sum'),
+(345,'https://leetcode.com/problems/sum-of-subarray-minimums/description/','Sum of Subarray Minimums'),
+(346,'https://codeforces.com/problemset/problem/817/D','Imbalanced Array'),
+(347,'https://www.spoj.com/problems/DIFERENC/','DIFERENCIJA'),
+(348,'https://codeforces.com/problemset/problem/547/B','Mike and Feet'),
+(349,'https://codeforces.com/problemset/problem/2166/C','Cyclic Merging'),
+(350,'https://codeforces.com/gym/104120/problem/I','Ivan and Mega Queries'),
+(351,'https://codeforces.com/contest/526/problem/F','Pudding and Monsters'),
+(352,'https://codeforces.com/contest/1483/problem/C','Skyline Photo'),
+(353,'https://codeforces.com/problemset/problem/1691/D','Max GEQ Sum'),
+(354,'https://codeforces.com/problemset/problem/1777/F','Comfortably Numb');
+
+-- Disjoint Set Union (DSU)
+(355,'https://codeforces.com/edu/course/2/lesson/7/2/practice/contest/289391/problem/B','Parking'),
+(356,'https://www.spoj.com/problems/CONSEC/','Consecutive Letters'),
+(357,'https://codeforces.com/edu/course/2/lesson/7/2/practice/contest/289391/problem/D','Bosses'),
+
+-- Ordered Set
