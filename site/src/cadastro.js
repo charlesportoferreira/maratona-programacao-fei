@@ -25,3 +25,5 @@ async function cadastro(){
 		window.location.href = `${PATH}/index.html`;
 	}
 }
+
+if( session ) window.location.href = `${PATH}/index.html`;

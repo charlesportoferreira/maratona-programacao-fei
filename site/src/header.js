@@ -4,6 +4,7 @@
 
 const header = document.getElementById("header");
 const left_tags = ['ranking','links','contato','ajuda','blog'];
+const admin_left_tags = ['problemas'];
 const logout_tags = ['login','sign up'];
 const PATH = '/maratona-programacao-fei/site'
 const header_files = {
@@ -17,6 +18,9 @@ const header_files = {
 	'user':`${PATH}/views/usuario.html`,
 	'blog':`${PATH}/views/blog.html`,
 };
+const admin_files = {
+	'problemas':`${PATH}/views/admin_problemas`,
+}
 
 async function logout(){
 	const { error } = await db.auth.signOut();
@@ -44,10 +48,19 @@ const titulo = document.getElementById("titulo");
 const right = document.createElement("div");
 right.id = "right";
 header.appendChild(right);
-
-db.auth.onAuthStateChange((event,session) => {
+{
 	if(session){
 		console.log("logado header");
+
+		if( session.user.user_metadata.super_admin ){
+			for(let i = 0; i < admin_left_tags.length; i++){
+				const button = document.createElement("a");
+				button.id = `header_${admin_left_tags[i]}`;
+				button.href = admin_files[admin_left_tags[i]];
+				button.textContent = admin_left_tags[i];
+				left.appendChild(button);
+			}
+		}
 		right.replaceChildren();
 		{
 			const button = document.createElement("button");
@@ -71,9 +84,8 @@ db.auth.onAuthStateChange((event,session) => {
 			button.textContent = logout_tags[i];
 			right.appendChild(button);
 		}
-
 	}
-});
+}
 
 const canvas = document.createElement("canvas");
 canvas.id = 'logo';
