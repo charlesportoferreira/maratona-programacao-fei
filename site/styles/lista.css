@@ -205,7 +205,7 @@
 	pointer-events: none;
 }
 
-#cadastro_topico{
+#problema_topico{
 	background: #eeeeff;
 	color: black;
 	border-radius: 10px;
@@ -216,7 +216,7 @@
 	margin: 10px;
 }
 
-#cadastro_topico .clickable:hover{
+#problema_topico .clickable:hover{
 	background: #1090b4;
 	color: white;
 }
