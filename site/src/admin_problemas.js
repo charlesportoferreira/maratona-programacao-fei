@@ -114,9 +114,10 @@ document.getElementById('topico_search').addEventListener('input',update_topicos
 
 async function getData() {
 	{
-		if( session == undefined || session == null
-		 || session.user.user_metadata.super_admin == null
-		 || session.user.user_metadata.super_admin == undefined) 
+		const { data:{user}, err } = await db.auth.getUser();
+		if( user == undefined || user == null
+		 || user.user_metadata.super_admin == null
+		 || user.user_metadata.super_admin == undefined)
 			window.location.href = `${PATH}/index.html`;
 
 		let query = db.from('topicos')

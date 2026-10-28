@@ -26,4 +26,6 @@ async function cadastro(){
 	}
 }
 
-if( session ) window.location.href = `${PATH}/index.html`;
+db.auth.onAuthStateChange((event,session) => {
+	if( session ) window.location.href = `${PATH}/index.html`;
+});

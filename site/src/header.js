@@ -3,7 +3,7 @@
 // .classList();
 
 const header = document.getElementById("header");
-const left_tags = ['ranking','links','contato','ajuda','blog'];
+const left_tags = ['ranking','links','contato','ajuda'];
 const admin_left_tags = ['problemas'];
 const logout_tags = ['login','sign up'];
 const PATH = '/maratona-programacao-fei/site'
@@ -48,7 +48,7 @@ const titulo = document.getElementById("titulo");
 const right = document.createElement("div");
 right.id = "right";
 header.appendChild(right);
-{
+db.auth.onAuthStateChange((event,session) => {
 	if(session){
 		console.log("logado header");
 
@@ -85,7 +85,7 @@ header.appendChild(right);
 			right.appendChild(button);
 		}
 	}
-}
+});
 
 const canvas = document.createElement("canvas");
 canvas.id = 'logo';
