@@ -277,7 +277,8 @@
 	display: none !important;
 }
 
-#introducao .editor_preview_buttons button{
+#introducao .editor_preview_buttons button,
+#editorial .editor_preview_buttons button{
 	border-radius: 0px;
 	margin-left: 10px;
 	margin-right:0px;
