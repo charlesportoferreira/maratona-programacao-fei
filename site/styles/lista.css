@@ -1,3 +1,10 @@
+:root{
+	--cor-01: #114064;
+	--cor-02: #1190b4;
+	--cor-03: #115084;
+	--cor-04: #eeeeff;
+}
+
 #container{
 	display: flex;
 	background: #114064;
@@ -133,6 +140,7 @@
 	color: black;
 	font-size: 13pt;
 	overflow: hidden;
+	text-align: left;
 }
 
 .descricao pre:has(code){
@@ -157,6 +165,7 @@
 	width: 50%;
 	text-align: center;
 	background: #114064;
+	margin-bottom: 20px;
 }
 
 .auth .linha span{
@@ -193,7 +202,7 @@
 	cursor:pointer;
 }
 
-/* adicionar problemas */
+/* adicionar problemas e topicos*/
 
 .check{
 	position:absolute;
@@ -205,7 +214,7 @@
 	pointer-events: none;
 }
 
-#problema_topico{
+.search_container{
 	background: #eeeeff;
 	color: black;
 	border-radius: 10px;
@@ -216,28 +225,65 @@
 	margin: 10px;
 }
 
-#problema_topico .clickable:hover{
+.search_container .clickable:hover{
 	background: #1090b4;
 	color: white;
 }
 
-#topicos_selecionados{
+.search_selected{
 	display:flex;
 	flex-direction:row;
 	flex-wrap: wrap;
 }
 
-#topicos_selecionados div{
+.search_selected div{
 	padding-right: 5px;
 	padding-left: 5px;
 	margin: 5px;
 	outline: 2px solid #1090b4;
 	border-radius: 5px;
 }
-#topicos_selecionados label{
+
+.search_selected label{
 	margin:auto;
 }
 
+.editor_preview{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.editor_preview #preview{
+	background: var(--cor-04);
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 0px;
+	padding-left: 0px;
+	height: 405.733px;
+	width: 100%;
+	border-radius: 10px;
+	overflow-y: scroll;
+}
+
+.editor_preview_buttons{
+	display:flex;
+	width: 100%;
+	justify-content: flex-start;
+}
+
+.editor_preview .escondido{
+	display: none !important;
+}
+
+#introducao .editor_preview_buttons button{
+	border-radius: 0px;
+	margin-left: 10px;
+	margin-right:0px;
+	padding: 5px;
+	width: auto;
+	
+}
 
 /* Usuario */
 

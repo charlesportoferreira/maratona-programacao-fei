@@ -49,7 +49,6 @@ async function getData(){
 		descricao.classList.add('descricao');
 		descricao.innerHTML = marked.parse(data[0].introducao);
 		introducao.appendChild(descricao);
-
 	}
 
 	const problemas = document.createElement("div");
