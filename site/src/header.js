@@ -66,6 +66,7 @@ db.auth.onAuthStateChange((event,session) => {
 				button.href = admin_files[admin_left_tags[i]];
 				button.textContent = admin_left_tags[i];
 				left.appendChild(button);
+				console.log(admin_left_tags[i]);
 			}
 		}
 		right.replaceChildren();
