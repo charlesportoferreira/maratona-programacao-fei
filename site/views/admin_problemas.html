@@ -7,7 +7,6 @@
 		<link href="../styles/header.css" rel="stylesheet">
 		<link href="../styles/lista.css" rel="stylesheet">
 		<link href="../styles/vim.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 	</head>
 	<body>
@@ -38,37 +37,9 @@
 			<div id='problema_response'></div>
 		</div>
 
-		<div class="auth">
-			<div id="titulo"> Adicionar Topico </div>
-			<form onsubmit='cadastrar_topico(); return false;'>
-				<div class='linha'>
-					<span> Nome: </span>
-					<input type='text' id='topico_nome' placeholder='nome' required>
-				</div>
-				<div class='coluna'>
-					<div class='linha'>
-						<span> Grupo: </span>
-						<input type='text' id='grupo_search' placeholder='Procure o grupo'>
-					</div>
-					<div class='search_selected' id='grupo_selecionado'> </div>
-					<div class='search_container' id='topico_grupo'> </div>
-				</div>
-				<div class='coluna' id='introducao'>
-						<div class='coluna editor_preview'id='introducao_container'>
-							<div id='editor'> </div>
-							<div id='preview' class='escondido'> </div>
-						</div>
-					
-				</div>
-				<button id='topico_cadastro'> Cadastrar </button>
-			</form>
-			<div id='topico_response'></div>
-		</div>
-
 		<script src="./../src/session.js" type="text/javascript"></script>
 		<script src="./../src/header.js" type="text/javascript"></script>
 		<script src="./../src/admin_problemas.js" type="text/javascript"></script>
-		<script src="./../src/vim.js" type="text/javascript"></script>
 		<script src="./../src/fundo.js" type="text/javascript"></script>
 	</body>
 </html>
