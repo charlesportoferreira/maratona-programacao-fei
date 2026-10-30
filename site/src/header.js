@@ -4,7 +4,7 @@
 
 const header = document.getElementById("header");
 const left_tags = ['ranking','links','contato','ajuda'];
-const admin_left_tags = ['problemas','topicos'];
+const admin_left_tags = ['problemas','topicos','editoriais'];
 const logout_tags = ['login','sign up'];
 const PATH = '/maratona-programacao-fei/site'
 const header_files = {
@@ -22,6 +22,7 @@ const header_files = {
 const admin_files = {
 	'problemas':`${PATH}/views/admin_problemas.html`,
 	'topicos':`${PATH}/views/admin_topicos.html`,
+	'editoriais':`${PATH}/views/admin_editoriais.html`,
 }
 
 async function logout(){
