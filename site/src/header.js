@@ -19,7 +19,7 @@ const header_files = {
 	'blog':`${PATH}/views/blog.html`,
 };
 const admin_files = {
-	'problemas':`${PATH}/views/admin_problemas`,
+	'problemas':`${PATH}/views/admin_problemas.html`,
 }
 
 async function logout(){
