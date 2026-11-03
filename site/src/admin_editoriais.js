@@ -106,6 +106,7 @@ async function getData() {
 		 || user.user_metadata.super_admin == undefined)
 			window.location.href = `${PATH}/index.html`;
 	}
+	window.dispatchEvent(new CustomEvent('setVimUp'));
 	{
 		let query = db.from('problemas')
 			.select('*')

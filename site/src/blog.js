@@ -38,6 +38,7 @@ function editor_preview(){
 	container.appendChild(editorial);
 	container.appendChild(botao_cadastrar);
 	set_editor();
+	window.dispatchEvent(new CustomEvent('setVimUp'));
 }
 
 function set_preview(){

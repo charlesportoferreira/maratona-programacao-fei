@@ -554,53 +554,52 @@ function carregarHighlight(on){
 
 // Main
 
-const vim = new Vim();
-let highlight_toggle = false;
+function setup(){
+	const vim = new Vim();
+	let highlight_toggle = false;
 
-function highlight(){
-	highlight_toggle = !highlight_toggle;
-	carregarHighlight(highlight_toggle);
-}
+	function highlight(){
+		highlight_toggle = !highlight_toggle;
+		carregarHighlight(highlight_toggle);
+	}
 
-if( vim.editor ){
-	document.getElementById("vim_status").innerText = vim.mode;
-	document.getElementById("vim_cmd").innerText = vim.cmd;
-
-	vim.editor.addEventListener("keydown",function(event){
-		const tecla = event.key;
-		if(vim.mode != "insert"
-		&& tecla != 'Shift'
-		&& tecla != 'Meta'
-		&& tecla != 'Enter') vim.cmd += tecla;
-		if(tecla == 'Escape') vim.chmod("general");
-		if(vim.cmd.length > 2) vim.cmd = "";
-		if(vim.mode != "insert") event.preventDefault();
-
-		if(vim.mode == "general") general(tecla);
-		else if(vim.mode == "visual") visual(tecla);
-		else if(vim.mode == "visual-linha") visual_linha(tecla);
-
+	if( vim.editor ){
 		document.getElementById("vim_status").innerText = vim.mode;
 		document.getElementById("vim_cmd").innerText = vim.cmd;
+
+		vim.editor.addEventListener("keydown",function(event){
+			const tecla = event.key;
+			if(vim.mode != "insert"
+			&& tecla != 'Shift'
+			&& tecla != 'Meta'
+			&& tecla != 'Enter') vim.cmd += tecla;
+			if(tecla == 'Escape') vim.chmod("general");
+			if(vim.cmd.length > 2) vim.cmd = "";
+			if(vim.mode != "insert") event.preventDefault();
+
+			if(vim.mode == "general") general(tecla);
+			else if(vim.mode == "visual") visual(tecla);
+			else if(vim.mode == "visual-linha") visual_linha(tecla);
+
+			document.getElementById("vim_status").innerText = vim.mode;
+			document.getElementById("vim_cmd").innerText = vim.cmd;
+			carregarBarra();
+		});
+
+		vim.editor.addEventListener("input",function(){
+			carregarHighlight(highlight_toggle);
+		});
+
+		vim.editor.addEventListener("keyup",function(){
+			carregarHighlight(highlight_toggle);
+		});
+
+		vim.editor.addEventListener("scroll",function(){
+			vim.barra.scrollTop = vim.editor.scrollTop;
+			vim.highlight.scrollTop = vim.editor.scrollTop;
+		});
 		carregarBarra();
-	});
-
-	vim.editor.addEventListener("input",function(){
 		carregarHighlight(highlight_toggle);
-	});
-
-	vim.editor.addEventListener("keyup",function(){
-		carregarHighlight(highlight_toggle);
-	});
-
-	vim.editor.addEventListener("scroll",function(){
-		vim.barra.scrollTop = vim.editor.scrollTop;
-		vim.highlight.scrollTop = vim.editor.scrollTop;
-	});
-	carregarBarra();
-	carregarHighlight(highlight_toggle);
+	}
 }
-
-
-
-
+window.addEventListener('setVimUp', () => setup());
