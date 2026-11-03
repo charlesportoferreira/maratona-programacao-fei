@@ -134,7 +134,7 @@
 .descricao{
 	flex:1;
 	border-radius: 10px;
-	margin: 0px;
+	margin: 10px;
 	padding: 10px;
 	background: #eeeeff;
 	color: black;
@@ -202,7 +202,7 @@
 	cursor:pointer;
 }
 
-/* adicionar problemas e topicos*/
+/* adicionar problemas, topicos, editorial e blog */
 
 .check{
 	position:absolute;
@@ -248,6 +248,7 @@
 	margin:auto;
 }
 
+
 .editor_preview{
 	position: relative;
 	display: flex;
@@ -256,11 +257,12 @@
 }
 
 .editor_preview #preview{
-	background: var(--cor-04);
+	background: var(--cor-03);
 	padding-top: 10px;
 	padding-bottom: 10px;
-	padding-right: 0px;
-	padding-left: 0px;
+	/* padding-right: 0px; */
+	/* padding-left: 0px; */
+	display:flex;
 	height: 405.733px;
 	width: 100%;
 	border-radius: 10px;
@@ -277,6 +279,7 @@
 	display: none !important;
 }
 
+#blog_container .editor_preview_buttons button,
 #introducao .editor_preview_buttons button,
 #editorial .editor_preview_buttons button{
 	border-radius: 0px;
@@ -284,7 +287,30 @@
 	margin-right:0px;
 	padding: 5px;
 	width: auto;
+
+	color: var(--cor-04);
+	background-color: var(--cor-01);
+	outline: solid 1px var(--cor-02);
+	border: 0px;
 	
+}
+
+.botao{
+	margin: auto;
+	width: 50%;
+	border-radius: 20px;
+	background-color: #114064;
+	padding: 10px;
+	padding-bottom: 5px;
+	color: #eeeeff;
+	outline: solid 1px #1190b4;
+	border: 0px;
+}
+
+.post{
+	background: var(--cor-03);
+	margin-top:10px;
+	border-radius: 10px;
 }
 
 /* Usuario */

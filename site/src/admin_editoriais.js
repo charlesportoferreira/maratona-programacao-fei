@@ -100,11 +100,11 @@ document.getElementById('problema_search').addEventListener('input',update_probl
 
 async function getData() {
 	{
-		// const { data:{user}, err } = await db.auth.getUser();
-		// if( user == undefined || user == null
-		//  || user.user_metadata.super_admin == null
-		//  || user.user_metadata.super_admin == undefined)
-		// 	window.location.href = `${PATH}/index.html`;
+		const { data:{user}, err } = await db.auth.getUser();
+		if( user == undefined || user == null
+		 || user.user_metadata.super_admin == null
+		 || user.user_metadata.super_admin == undefined)
+			window.location.href = `${PATH}/index.html`;
 	}
 	{
 		let query = db.from('problemas')

@@ -39,7 +39,7 @@
 
 #vim_wrap_highlight{
 	position:relative;
-	width: 630px;
+	width: 100%;
 	overflow:hidden;
 }
 

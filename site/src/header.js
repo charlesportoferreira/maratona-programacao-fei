@@ -3,7 +3,7 @@
 // .classList();
 
 const header = document.getElementById("header");
-const left_tags = ['ranking','links','contato','ajuda'];
+const left_tags = ['ranking','links','contato','ajuda','blog'];
 const admin_left_tags = ['problemas','topicos','editoriais'];
 const logout_tags = ['login','sign up'];
 const PATH = '/maratona-programacao-fei/site'
