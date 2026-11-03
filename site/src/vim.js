@@ -554,8 +554,9 @@ function carregarHighlight(on){
 
 // Main
 
+let vim;
 function setup(){
-	const vim = new Vim();
+	vim = new Vim();
 	let highlight_toggle = false;
 
 	function highlight(){
@@ -602,4 +603,5 @@ function setup(){
 		carregarHighlight(highlight_toggle);
 	}
 }
+
 window.addEventListener('setVimUp', () => setup());
