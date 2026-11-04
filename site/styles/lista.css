@@ -139,7 +139,7 @@
 	background: #eeeeff;
 	color: black;
 	font-size: 13pt;
-	overflow: hidden;
+	overflow-y: scroll;
 	text-align: left;
 }
 
