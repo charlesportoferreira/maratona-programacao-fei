@@ -313,6 +313,11 @@
 	border-radius: 10px;
 }
 
+.post .descricao img{
+	margin-left: 12.5%;
+	width: 75%;
+}
+
 /* Usuario */
 
 #container h1{
