@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aulas</title>
+    <link href="../styles/header.css" rel="stylesheet">
+    <link href="../styles/lista.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div id="header"></div>
+
+	<div id='container'>
+		<!--
+			Para adicionar uma aula:
+			  1. coloque o PDF em site/aulas/ (ex.: site/aulas/busca_binaria.pdf)
+			  2. acrescente uma linha no grupo certo:
+			     <div class='problema'> <a target='_blank' href='../aulas/busca_binaria.pdf'> Busca Binária </a> </div>
+			Para um novo tema, copie um bloco <div class='grupo'> inteiro.
+		-->
+		<div class='grupo'>
+			<div> Aulas </div>
+			<div class='problema'> <a target='_blank' href='../aulas/aula00_introducao_programacao_competitiva.pdf'> Aula 0. Introdução à programação competitiva </a> </div>
+			<div class='problema'> <a target='_blank' href='../aulas/aula01_contagem_intervalos.pdf'> Aula 1. Exercício: contagem em intervalos </a> </div>
+			<div class='problema'> <a target='_blank' href='../aulas/aula02_erros_entrada_saida.pdf'> Aula 2. Erros comuns I: entrada, saída e envio </a> </div>
+			<div class='problema'> <a target='_blank' href='../aulas/aula03_erros_logica.pdf'> Aula 3. Erros comuns II: lógica, limites e testes </a> </div>
+		</div>
+	</div>
+
+    <script src="./../src/session.js" type="text/javascript"></script>
+    <script src="./../src/header.js" type="text/javascript"></script>
+    <script src="./../src/fundo.js" type="text/javascript"></script>
+</body>
+</html>
